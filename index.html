@@ -1,37 +1,67 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ремонт роллет и рольставней</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Подключение Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any" type="image/x-icon">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Цвета интерфейса -->
+    <meta name="theme-color" content="#f4f2d2">
+    <meta name="msapplication-TileColor" content="#f4f2d2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>Ремонт рольставней и ворот в Ростове-на-Дону | Ростов-Сервис</title>
+
+    <!-- SEO -->
+    <meta name="description"
+        content="Профессиональный ремонт рольставней и ворот в Ростове-на-Дону. Гарантия качества, оперативный выезд мастера.">
+    <meta name="keywords" content="ремонт рольставней, ремонт рольворот, починить рольставни, Ростов-на-Дону">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Ремонт рольставней и ворот в Ростове-на-Дону">
+    <meta property="og:description" content="Профессиональный ремонт рольставней и ворот">
+    <meta property="og:type" content="website">
+
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="/style.css" media="all">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Другие теги -->
+    <script src="/script.js" defer></script>
 </head>
+
 <body>
     <!-- Шапка -->
     <header>
         <!-- Кнопка меню -->
         <div class="menu-icon">
             <a href="#" aria-label="Открыть меню">
-                <img src="imeges/menu.svg" alt="Меню" class="menu-default">
-                <img src="imeges/menuN.svg" alt="Меню (активное)" class="menu-hover">
+                <img src="/images/menu.svg" alt="Меню" class="menu-default">
+                <img src="/images/menuN.svg" alt="Меню (активное)" class="menu-hover">
             </a>
         </div>
-    
+
         <!-- Логотип -->
         <div class="logo">
             <a href="/" aria-label="Главная страница">
-                <img src="imeges/logo.png" alt="Логотип компании Ремонт роллет">
+                <img src="/images/logo.png" alt="Логотип компании Рстов-сервис" width="120" height="120">
             </a>
         </div>
-    
-        <!-- Навигация -->
-        <nav aria-label="Основная навигация">
-            <a href="/" class="nav-link glavnaya">Главная</a>
-            <a href="#contact" class="nav-link kontaktai">Контакты</a>
-        </nav>
-    
+
         <!-- Контакты -->
         <div class="header-contacts">
             <div class="header-phone">
@@ -41,93 +71,325 @@
                 </a>
             </div>
             <p class="header-city">
-                <a href="https://yandex.ru/maps/-/CHe6f6I7" class="desktop-only" target="_blank" rel="noopener noreferrer" aria-label="Наш город на карте">
+                <a href="https://yandex.ru/maps/-/CHe6f6I7" class="desktop-only" target="_blank"
+                    rel="noopener noreferrer" aria-label="Как нас найти">
                     г. Ростов-на-Дону
                 </a>
             </p>
         </div>
-    </header>
 
+    </header>
+    <!-- Объединяющий блок -->
     <!-- Главный экран -->
     <section class="hero">
-        <h1>Ремонт роллет и рольставней</h1>
-        <p>Качественный ремонт по доступным ценам. Работаем быстро и надёжно!</p>
+        <h1>Ремонт рольворот и рольставней</h1>
+        <p class="experience">Мы специализируемся на ремонте и обслуживании рольворот и рольставней уже
+            <span class="highlight">более 10 лет</span>.
+        </p>
+        <p>С каждым клиентом наш опыт растет, а многие заказчики возвращаются к нам снова и снова.</p>
     </section>
 
-    <!-- Секция услуг -->
-    <section id="services" class="services">
-        <h2>Наши услуги</h2>
-        <div class="service-card">
-            <h3>Ремонт роллет</h3>
-            <p>Описание услуги по ремонту роллет. Мы восстанавливаем функциональность ваших роллет быстро и качественно.</p>
-        </div>
-        <div class="service-card">
-            <h3>Ремонт рольставней</h3>
-            <p>Описание услуги по ремонту рольставней. Продлеваем жизнь вашим рольставням с минимальными затратами.</p>
-        </div>
-    </section>
+    <div class="content-container">
+        <!-- Секция услуг -->
+        <div class="services-container">
 
-    <!-- Секция преимуществ -->
-    <section id="advantages" class="advantages">
-        <h2>Почему выбирают нас?</h2>
-        <ul class="advantage-list">
-            <li>Быстро</li>
-            <li>Качественно</li>
-            <li>Гарантированно</li>
-        </ul>
-    </section>
+            <!-- Первая карточка услуги -->
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="/images/Remrol.jpg" alt="Ремонт рольворот" class="main-image">
+                    <div class="additional-images" style="display: none;">
+                        <img src="/images/Remro1l.jpg" alt="Ремонт рольворот">
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-title">
+                        <h3>Ремонт рольворот</h3>
+                    </div>
+                    <div class="service-text">
+                        <p>Профессиональный ремонт <strong class="tooltip">рольворот<span class="tooltiptext">рулонные
+                                    ворота</span></strong> в Ростове-на-Дону! Мы предлагаем качественное
+                            обслуживание и
+                            ремонт рольворот любых производителей, включая
+                            <a href="https://doorhan.ru/" target="_blank" style="text-decoration: none;"><strong
+                                    class="tooltip">Doorhan<span class="tooltiptext">Официальный сайт
+                                        Doorhan</span></strong></a>,
+                            <a href="https://alutech-group.com/" target="_blank" style="text-decoration: none;"><strong
+                                    class="tooltip">Alutech<span class="tooltiptext">Официальный сайт
+                                        Alutech</span></strong></a>,
+                            <a href="https://niceforyou.ru/" target="_blank" style="text-decoration: none;"><strong
+                                    class="tooltip">Nice<span class="tooltiptext">Официальный сайт
+                                        Nice</span></strong></a> и другие.
+                        </p>
+                        <p>Наши услуги охватывают:</p>
+                        <ul>
+                            <li>Замену <strong class="tooltip">электроприводов<span
+                                        class="tooltiptext">двигателей</span></strong>, <strong class="tooltip">блоков
+                                    управления<span class="tooltiptext">плата управления открытием<br>и привязки
+                                        пультов</span></strong> и <strong class="tooltip">тяговых пружин<span
+                                        class="tooltiptext">ригельные пружины выполняют<br>функцию крепежа
+                                        полотна<br>к
+                                        валу</span></strong>.</li>
+                            <li>Обновление роликов для обеспечения плавной работы.</li>
+                            <li>Восстановление полотна ворот и ремонт <strong class="tooltip">автоматики<span
+                                        class="tooltiptext">двигатель, плата управления, пульт</span></strong>.</li>
+                            <li><strong class="tooltip">Регулировку<span class="tooltiptext">установка верхней и
+                                        нижней
+                                        позиции остановки двигателя</span></strong>
+                                и
+                                настройку рулонных ворот для оптимальной функциональности.</li>
+                        </ul>
+                        <p>Доверяйте ремонт <strong class="tooltip">рольворот<span class="tooltiptext">рулонные
+                                    ворот</span></strong> только опытным мастерам, чтобы ваши ворота работали
+                            безотказно!</p>
+                    </div>
+                </div>
 
-    <!-- Секция отзывов -->
-    <section id="reviews" class="reviews">
-        <h2>Отзывы клиентов</h2>
-        <div class="review-item">
-            <blockquote>
-                "Отличный сервис, всё сделали быстро и качественно!"
-            </blockquote>
-            <cite>- Иван Иванов</cite>
-        </div>
-    </section>
-
-    <!-- Секция контактов -->
-    <section id="contact" class="contact">
-        <h2>Заказать звонок</h2>
-        <form action="#" method="POST" class="contact-form">
-            <input type="text" placeholder="Ваше имя" required aria-label="Введите ваше имя">
-            <input type="tel" placeholder="Ваш телефон" required aria-label="Введите ваш номер телефона">
-            <button type="submit" class="submit-button">Отправить</button>
-        </form>
-    </section>
-
-    <!-- Подвал -->
-    <footer class="footer" role="contentinfo">
-        <!-- Контакты -->
-        <address class="footer-contacts">
-            <!-- Телефон -->
-            <div class="contact-phone">
-                <a href="tel:+79518264429" class="phone-link" aria-label="Позвонить нам">
-                    <i class="fas fa-phone" aria-hidden="true"></i> <!-- Иконка телефона -->
-                    8(951)826-44-29 <!-- Номер телефона -->
-                </a>
+                <!-- Дополнительный блок с заголовком и текстом -->
+                <div class="additional-block">
+                    <div class="additional-header">
+                        <h4><strong>Ценные советы</strong> <span class="toggle-icon">+</span></h4>
+                    </div>
+                    <div class="additional-content">
+                        <div class="content-wrapper">
+                            <p>1. Не реагируют на команды с пульта<br>
+                                Первым делом найдите блок управления, так как именно он синхронизируется с
+                                пультом.<br>
+                                Проверьте:<br>
+                                - Подачу электропитания<br>
+                                - Состояние предохранителя (если имеется)<br>
+                                - Внешнее состояние платы на предмет повреждений<br>
+                                При необходимости потребуется диагностика электронных компонентов специальным
+                                оборудованием.
+                            </p>
+                            <p>2. Неполное открытие/закрытие<br>
+                                Алгоритм действий:<br>
+                                - Осмотрите полотно на предмет деформаций<br>
+                                - Проверьте натяжение пружин<br>
+                                - Выполните калибровку предельных положений<br>
+                                Если проблема сохраняется - возможна неисправность привода, требующая
+                                профессионального
+                                ремонта.
+                            </p>
+                            <p>3. Заклинивание в коробе<br>
+                                Основные причины:<br>
+                                - Образование наледи зимой<br>
+                                - Механические повреждения<br>
+                                - Неправильная намотка полотна<br>
+                                Решение:<br>
+                                - Вручную выведите полотно по направляющим<br>
+                                - Проверьте крепление вала<br>
+                                - Отрегулируйте систему привода
+                            </p>
+                            <p>4. Двигатель работает, но полотно не движется<br>
+                                Вероятные причины:<br>
+                                - Разъединение ламелей<br>
+                                - Сход полотна с вала<br>
+                                Что делать:<br>
+                                - Снимите нагрузку с пружин<br>
+                                - Выполните сброс системы<br>
+                                - Переустановите полотно и выполните настройку
+                            </p>
+                            <p>5. Перекос при движении<br>
+                                Диагностика:<br>
+                                - Проверьте подшипниковые узлы<br>
+                                - Убедитесь в равномерном натяжении пружин<br>
+                                - Осмотрите направляющие<br>
+                                После замены изношенных компонентов обязательна тестовая проверка.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Адрес -->
-            <p class="contact-address">
-                <a href="https://yandex.ru/maps/-/CHe6f6I7" target="_blank" rel="noopener noreferrer" aria-label="Наш адрес на карте">
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i> <!-- Иконка адреса -->
-                    г. Ростов-на-Дону, ул. Стачки, 243
-                </a>
-            </p>
-            <!-- Copyright -->
-            <p class="copyright">&copy; 2023 Ремонт роллет и рольставней. Все права защищены.</p>
-        </address>
-    </footer>
 
-    <!-- Кнопка "Наверх" -->
-    <div class="scroll-to-top" aria-label="Вернуться наверх">
-        <img src="imeges/vverh.svg" alt="Наверх" class="scroll-default">
-        <img src="imeges/vverhN.svg" alt="Наверх (активное)" class="scroll-hover">
+            <!-- Вторая карточка услуги -->
+            <div class="service-card">
+                <div class="service-image">
+                    <img src="/images/Remrolstavni.jpg" alt="Ремонт рольставней" class="main-image">
+                    <div class="additional-images" style="display: none;">
+                        <!-- Здесь могут быть другие изображения -->
+                    </div>
+                </div>
+                <div class="service-content">
+                    <div class="service-title">
+                        <h3>Ремонт рольставней</h3>
+                    </div>
+                    <div class="service-text">
+                        <p>Профессиональный ремонт <strong class="tooltip">рольставней<span class="tooltiptext">рулонные
+                                    ставни</span></strong> в Ростове-на-Дону! Мы предлагаем качественное
+                            обслуживание и
+                            ремонт рольставней любых производителей, включая
+                            <a href="https://doorhan.ru/" target="_blank" rel="noopener noreferrer"
+                                style="text-decoration: none;"><strong class="tooltip">Doorhan<span
+                                        class="tooltiptext">Официальный сайт Doorhan</span></strong></a>,
+                            <a href="https://alutech-group.com/" target="_blank" rel="noopener noreferrer"
+                                style="text-decoration: none;"><strong class="tooltip">Alutech<span
+                                        class="tooltiptext">Официальный сайт Alutech</span></strong></a>,
+                            <a href="https://niceforyou.ru/" target="_blank" rel="noopener noreferrer"
+                                style="text-decoration: none;"><strong class="tooltip">Nice<span
+                                        class="tooltiptext">Официальный сайт Nice</span></strong></a> и другие.
+                        </p>
+                        <p>Наши услуги охватывают:</p>
+                        <ul>
+                            <li>Замену <strong class="tooltip">электроприводов<span
+                                        class="tooltiptext">двигателей</span></strong>, <strong class="tooltip">блоков
+                                    управления<span class="tooltiptext">плата управления открытием<br>и привязки
+                                        пультов</span></strong> и <strong class="tooltip">тяговых пружин<span
+                                        class="tooltiptext">ригельные пружины выполняют<br>функцию крепежа
+                                        полотна<br>к
+                                        валу</span></strong>.</li>
+                            <li>Обновление роликов для обеспечения плавной работы.</li>
+                            <li>Восстановление полотна и ремонт автоматики.</li>
+                            <li><strong class="tooltip">Регулировку<span class="tooltiptext">установка верхней и
+                                        нижней
+                                        позиции остановки двигателя</span></strong> и настройку <strong
+                                    class="tooltip">роллет<span class="tooltiptext">рулонные
+                                        ставни</span></strong> для
+                                оптимальной функциональности.</li>
+                        </ul>
+                        <p>Доверяйте ремонт <strong class="tooltip">рольставней<span class="tooltiptext">рулонные
+                                    ставни</span></strong> только опытным мастерам, чтобы ваши ворота работали
+                            безотказно!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Дополнительный блок с заголовком и текстом -->
+                <div class="additional-block">
+                    <div class="additional-header">
+                        <h4>Ценные советы<span class="toggle-icon">+</span></h4>
+                    </div>
+                    <div class="additional-content">
+                        <div class="content-wrapper">
+                            <p>1. Рольставни не реагируют на пульт<br>
+                                Причина: Проблемы с платой управления или питанием.<br>
+                                Решение:<br>
+                                Проверьте, правильно ли запрограммирован пульт на плату управления.<br>
+                                Убедитесь, что на блок управления подаётся питание.<br>
+                                Проверьте предохранитель на плате.<br>
+                                Если проблема не решена, проведите диагностику с помощью мультиметра.</p>
+                            <p>2. Рольставни закрываются или открываются не полностью<br>
+                                Причина: Деформация ламелей, проблемы с тяговыми пружинами или приводом.<br>
+                                Решение:<br>
+                                Осмотрите полотно на наличие деформированных ламелей.<br>
+                                Проверьте состояние тяговых пружин.<br>
+                                Отрегулируйте привод. Если регулировка не помогает, возможно, потребуется замена
+                                двигателя.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Контейнер для полноэкранного просмотра изображений -->
+        <div id="fullscreen-overlay">
+            <div class="fullscreen-content">
+                <span class="close-btn">&times;</span>
+                <h2 class="image-title"></h2>
+                <div class="image-container">
+                    <img src="" alt="Fullscreen Image" class="fullscreen-image">
+                </div>
+            </div>
+        </div>
+        </main>
+        </section>
+
+        <!-- Секция преимуществ -->
+        <section id="advantages" class="advantages">
+            <!-- Главный заголовок-стикер -->
+            <div class="main-sticker">
+                <h2>Почему выбирают нас?</h2>
+                <div class="arrows">
+                    <span class="arrow-down">↓</span>
+                </div>
+            </div>
+            <!-- Контейнер стикеров -->
+            <div class="stickers-container">
+                <div class="sticker fast-sticker">
+                    <div class="sticker-content">
+                        <div class="main-text">Быстро</div>
+                        <div class="hover-text">Выезд в течение часа</div>
+                    </div>
+                </div>
+
+                <div class="sticker quality-sticker">
+                    <div class="sticker-content">
+                        <div class="main-text">Качественно</div>
+                        <div class="hover-text">Оригинальные запчасти</div>
+                    </div>
+                </div>
+
+                <div class="sticker guarantee-sticker">
+                    <div class="sticker-content">
+                        <div class="main-text">Гарантированно</div>
+                        <div class="hover-text">Предоставление чека</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Секция отзывов -->
+            <div class="reviews-section"
+                style="width: 100%; padding: 40px 0; margin: 40px 0; background: #f9f9f9; box-sizing: border-box;">
+                <div class="reviews-container"
+                    style="max-width: 800px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden;">
+                    <iframe class="reviews-iframe" src="https://yandex.ru/maps-reviews-widget/178245616325?comments"
+                        title="Отзывы клиентов" style="width: 100%; height: 750px; border: none; display: block;">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Подключение API Яндекс.Карт -->
+            <script
+                src="https://api-maps.yandex.ru/2.1/?apikey=194a19a1-9c78-4451-8ade-c3158d18998b&lang=ru_RU&cors=1"></script>
+
+            <!-- Блок Карты -->
+            <div class="page-wrapper">
+                <div class="map-container">
+                    <div id="yandex-map"></div>
+                </div>
+            </div>
+
+            <!-- Секция информации -->
+            <section id="advantages" class="advantages">
+
+
+                <p>Фрунзе Николай Викторович</p>
+                <p><a href="mailto:professorteh@yandex.ru">Professorteh@yandex.ru</a></p>
+                <p>ИНН 611103159735</p>
+
+
+            </section>
+    </div> <!-- Закрытие нового контейнера -->
+
+    <!-- Относится к кнопки позвонить -->
+    <div class="content">
+        <!-- Ваш контент сайта -->
+        <div style="height: 20px;">
+        </div>
     </div>
 
-    <!-- Подключение JavaScript -->
-    <script src="script.js"></script>
+    <!-- Кнопка "Позвонить" -->
+    <div id="callButton" class="call-button">
+        <a href="tel:+79518264429" class="call-link">
+            <i class="fas fa-phone" aria-hidden="true"></i> <!-- Иконка телефона -->
+        </a>
+        <button class="close-button" onclick="hideCallButton()">×</button>
+    </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        <p class="contact-info"><i class="fas fa-phone" aria-label="Позвонить нам"></i> <a
+                href="tel:+79518264429">8(951)826-44-29</a></p>
+        <p class="contact-info"><i class="fa fa-map-marker-alt"></i> <a
+                href="https://yandex.ru/maps/-/CHe6f6I7">г.Ростов-на-Дону ул.Стачки 243</a></p>
+        <p class="copyright">&copy; 2025 Ремонт рольворот и рольставней. Все права защищены.</p>
+    </footer>
+    <!-- Кнопка "Наверх" -->
+    <button class="scroll-to-top" aria-label="Вернуться наверх">
+        <img src="/images/vverh.svg" alt="Наверх" class="scroll-default">
+        <img src="/images/vverhN.svg" alt="Наверх (активное)" class="scroll-hover">
+    </button>
 </body>
+
 </html>
