@@ -1,2 +1,8 @@
 /CNAME
 /robots.txt
+/node_modules/
+
+# npm
+/package.json
+/package-lock.json
+
