@@ -430,3 +430,58 @@ if (document.readyState === 'loading') {
 } else {
   initMap();
 }
+
+// Пробные отзывы
+// script.js
+document.addEventListener('DOMContentLoaded', () => {
+  const reviewsContainer = document.getElementById('reviews-container');
+  const API_URL = 'http://zoyberg161.42web.io/parse_reviews.php';
+
+  const showError = (message) => {
+    reviewsContainer.innerHTML = `<div class="error">${message}</div>`;
+  };
+
+  const renderReviews = (reviews) => {
+    if (!reviews || reviews.length === 0) {
+      showError('Отзывы не найдены');
+      return;
+    }
+
+    reviewsContainer.innerHTML = reviews
+      .map(
+        (review) => `
+          <div class="review-card">
+              <div class="review-author">${review.author || 'Аноним'}</div>
+              <div class="review-text">${review.text || 'Без текста'}</div>
+          </div>
+      `
+      )
+      .join('');
+  };
+
+  const loadReviews = async () => {
+    try {
+      const response = await fetch(API_URL);
+
+      if (!response.ok) {
+        throw new Error(`Ошибка HTTP: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data.error) {
+        showError(data.error);
+        return;
+      }
+
+      renderReviews(data);
+    } catch (error) {
+      showError(`Не удалось загрузить отзывы: ${error.message}`);
+      console.error('Ошибка:', error);
+    }
+  };
+
+  // Загружаем сразу и каждые 5 минут
+  loadReviews();
+  setInterval(loadReviews, 300000);
+});
