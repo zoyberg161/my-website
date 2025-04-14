@@ -435,7 +435,8 @@ if (document.readyState === 'loading') {
 // script.js
 document.addEventListener('DOMContentLoaded', () => {
   const reviewsContainer = document.getElementById('reviews-container');
-  const API_URL = 'http://zoyberg161.42web.io/parse_reviews.php';
+  const API_URL =
+    'https://cors-anywhere.herokuapp.com/http://zoyberg161.42web.io/parse_reviews.php';
 
   const showError = (message) => {
     reviewsContainer.innerHTML = `<div class="error">${message}</div>`;
