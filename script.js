@@ -432,57 +432,74 @@ if (document.readyState === 'loading') {
 }
 
 // Пробные отзывы
-// script.js
 document.addEventListener('DOMContentLoaded', () => {
   const reviewsContainer = document.getElementById('reviews-container');
-  const API_URL =
-    'https://cors-anywhere.herokuapp.com/http://zoyberg161.42web.io/parse_reviews.php';
+  const API_URL = 'parse_reviews.php'; // Лучше использовать относительный путь
 
   const showError = (message) => {
-    reviewsContainer.innerHTML = `<div class="error">${message}</div>`;
+    reviewsContainer.innerHTML = `
+      <div class="error">
+        <p>${message}</p>
+        <button onclick="location.reload()">Попробовать снова</button>
+      </div>
+    `;
   };
 
   const renderReviews = (reviews) => {
-    if (!reviews || reviews.length === 0) {
-      showError('Отзывы не найдены');
+    if (!reviews || !Array.isArray(reviews) || reviews.length === 0) {
+      showError('Нет отзывов для отображения');
       return;
     }
 
-    reviewsContainer.innerHTML = reviews
-      .map(
-        (review) => `
-          <div class="review-card">
-              <div class="review-author">${review.author || 'Аноним'}</div>
-              <div class="review-text">${review.text || 'Без текста'}</div>
-          </div>
-      `
-      )
-      .join('');
+    const reviewsGrid = document.createElement('div');
+    reviewsGrid.className = 'reviews-grid';
+
+    reviews.forEach((review) => {
+      const reviewCard = document.createElement('div');
+      reviewCard.className = 'review-card';
+
+      reviewCard.innerHTML = `
+        <div class="review-header">
+          <span class="review-author">${review.author || 'Аноним'}</span>
+          <span class="review-date">${review.date || ''}</span>
+        </div>
+        <div class="review-text">${review.text || 'Без текста'}</div>
+      `;
+
+      reviewsGrid.appendChild(reviewCard);
+    });
+
+    reviewsContainer.innerHTML = '';
+    reviewsContainer.appendChild(reviewsGrid);
   };
 
   const loadReviews = async () => {
     try {
-      const response = await fetch(API_URL);
+      reviewsContainer.innerHTML =
+        '<div class="loading">Загрузка отзывов...</div>';
 
-      if (!response.ok) {
-        throw new Error(`Ошибка HTTP: ${response.status}`);
-      }
+      const response = await fetch(API_URL, {
+        cache: 'no-cache',
+      });
+
+      if (!response.ok) throw new Error(`Ошибка HTTP: ${response.status}`);
 
       const data = await response.json();
 
-      if (data.error) {
-        showError(data.error);
-        return;
+      if (data.status === 'error' || !data.data) {
+        throw new Error('Неверный формат данных');
       }
 
-      renderReviews(data);
+      renderReviews(data.data);
     } catch (error) {
-      showError(`Не удалось загрузить отзывы: ${error.message}`);
+      showError(`Ошибка загрузки: ${error.message}`);
       console.error('Ошибка:', error);
     }
   };
 
-  // Загружаем сразу и каждые 5 минут
+  // Первая загрузка
   loadReviews();
-  setInterval(loadReviews, 300000);
+
+  // Обновление каждые 10 минут
+  setInterval(loadReviews, 600000);
 });
