@@ -23,10 +23,9 @@ if (form) {
     const phoneInput = form.querySelector('input[type="tel"]');
 
     if (nameInput.value.trim() === '' || phoneInput.value.trim() === '') {
-      event.preventDefault(); // Предотвращаем отправку формы
+      event.preventDefault();
       alert('Пожалуйста, заполните все поля!');
     } else {
-      // Если форма валидна, можно добавить дополнительные действия (например, AJAX)
       console.log('Форма успешно отправлена!');
     }
   });
@@ -101,8 +100,8 @@ document.addEventListener('click', (event) => {
 // Чтобы кнопка "Вверх" работала при нажатии "Enter" или "Space"
 document.querySelector('.scroll-to-top').addEventListener('keydown', (e) => {
   if (e.key === 'Enter' || e.key === ' ') {
-    e.preventDefault(); // Предотвращаем стандартное поведение
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Прокрутка наверх
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 });
 
@@ -125,15 +124,15 @@ document.querySelectorAll('.tooltip').forEach((tooltip) => {
 
     // Проверка, выходит ли подсказка за пределы экрана
     if (rect.top < 0) {
-      tooltipText.classList.add('bottom-out'); // Показываем подсказку снизу
+      tooltipText.classList.add('bottom-out');
     }
 
     if (rect.left < 0) {
-      tooltipText.classList.add('left-out'); // Смещаем подсказку вправо
+      tooltipText.classList.add('left-out');
     }
 
     if (rect.right > viewportWidth) {
-      tooltipText.classList.add('right-out'); // Смещаем подсказку влево
+      tooltipText.classList.add('right-out');
     }
 
     // Если подсказка снизу тоже выходит за пределы экрана, возвращаем её наверх
@@ -141,26 +140,26 @@ document.querySelectorAll('.tooltip').forEach((tooltip) => {
       const bottomRect = tooltipText.getBoundingClientRect();
       if (bottomRect.bottom > viewportHeight) {
         tooltipText.classList.remove('bottom-out');
-        tooltipText.classList.add('top-out'); // Возвращаем подсказку наверх
+        tooltipText.classList.add('top-out');
       }
     }
 
     // Автоматически подстраиваем ширину подсказки под текст
-    tooltipText.style.whiteSpace = 'nowrap'; // Сначала проверяем без переноса
+    tooltipText.style.whiteSpace = 'nowrap';
     const textWidth = tooltipText.scrollWidth;
 
     if (textWidth > viewportWidth * 0.8) {
-      tooltipText.style.whiteSpace = 'normal'; // Переносим текст на новую строку
-      tooltipText.style.maxWidth = '200px'; // Уменьшаем ширину
+      tooltipText.style.whiteSpace = 'normal';
+      tooltipText.style.maxWidth = '200px';
     } else {
-      tooltipText.style.maxWidth = 'none'; // Восстанавливаем стандартную ширину
+      tooltipText.style.maxWidth = 'none';
     }
   });
 
   // Скрываем подсказку при уходе курсора
   tooltip.addEventListener('mouseleave', () => {
-    tooltipText.style.whiteSpace = 'nowrap'; // Восстанавливаем стандартное поведение
-    tooltipText.style.maxWidth = 'none'; // Восстанавливаем стандартную ширину
+    tooltipText.style.whiteSpace = 'nowrap';
+    tooltipText.style.maxWidth = 'none';
   });
 });
 
@@ -186,7 +185,6 @@ serviceCards.forEach((card) => {
   );
 
   mainImage.addEventListener('click', () => {
-    // Собираем все изображения из текущей карточки
     currentImages = [
       mainImage.src,
       ...Array.from(additionalImages).map((img) => img.src),
@@ -196,14 +194,14 @@ serviceCards.forEach((card) => {
 
     updateFullscreenImage();
     overlay.style.display = 'flex';
-    startAutoSlide(); // Запускаем автоматическое переключение
+    startAutoSlide();
   });
 });
 
 // Закрытие полноэкранного просмотра
 function closeOverlay() {
   overlay.style.display = 'none';
-  stopAutoSlide(); // Останавливаем автоматическое переключение
+  stopAutoSlide();
 }
 
 // Закрытие при клике на пустое место (рамку) вокруг изображения
@@ -233,7 +231,7 @@ document.addEventListener('keydown', (e) => {
 // Переключение изображений
 function updateFullscreenImage() {
   fullscreenImage.src = currentImages[currentImageIndex];
-  imageTitle.textContent = currentTitles[0]; // Используем заголовок карточки
+  imageTitle.textContent = currentTitles[0];
 }
 
 // Навигация по изображениям с помощью стрелок клавиатуры
@@ -264,7 +262,7 @@ function prevImage() {
 function startAutoSlide() {
   autoSlideInterval = setInterval(() => {
     nextImage();
-  }, 3000); // Переключение каждые 3 секунды
+  }, 3000);
 }
 
 // Остановка автоматического переключения
@@ -286,19 +284,18 @@ imageContainer.addEventListener('touchend', (e) => {
 });
 
 function handleSwipe() {
-  const swipeThreshold = 50; // Минимальная дистанция для срабатывания жеста
+  const swipeThreshold = 50;
   const swipeDistance = touchEndX - touchStartX;
 
   if (swipeDistance > swipeThreshold) {
-    prevImage(); // Свайп вправо
+    prevImage();
   } else if (swipeDistance < -swipeThreshold) {
-    nextImage(); // Свайп влево
+    nextImage();
   }
 }
 
 // Раскрывающиеся блоки
 document.addEventListener('DOMContentLoaded', function () {
-  // Обработка кликов на заголовки дополнительных блоков
   document.querySelectorAll('.additional-header').forEach((header) => {
     header.addEventListener('click', function () {
       const block = this.closest('.additional-block');
@@ -323,9 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Добавьте этот код в ваш существующий обработчик событий
 document.querySelectorAll('.service-image img.main-image').forEach((img) => {
-  img.addEventListener('click', function () {
-    // Ваш существующий код для полноэкранного просмотра
-  });
+  img.addEventListener('click', function () {});
 });
 
 // Добавляем интерактивность для мобильных устройств
@@ -361,7 +356,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-
-// Карты
-
-// Пробные отзывы
