@@ -729,25 +729,51 @@ header .logo img {
     line-height: 1.6;
 }
 
-/* Список в тексте */
+/* Список в тексте - УБИРАЕМ СТАНДАРТНЫЕ МАРКЕРЫ */
 .service-text ul {
-    padding-left: 10px;
+    list-style: none !important;
+    /* Гарантированно убираем точки */
+    padding-left: 0 !important;
+    /* Убираем стандартный отступ */
+    margin-left: 0;
+    /* Сбрасываем отступ */
 }
 
+/* Стили для элементов списка с кастомными маркерами */
 .service-text li {
-    list-style-type: disc;
-    margin-left: 20px;
+    position: relative;
+    padding-left: 28px;
+    /* Отступ для квадратика */
+    margin-bottom: 12px;
+    line-height: 1.5;
+    list-style-type: none !important;
+    /* Дополнительная страховка */
 }
 
-/* Стили для подсказок */
+/* Кастомные квадратные маркеры */
+.service-text li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 20px;
+    height: 15px;
+    background-color: #ce80ed;
+    border-radius: 3px;
+    border-left: 3px solid #d7a2f8;
+}
+
+/* Стили для подсказок (основные) */
 .tooltip {
     position: relative;
     display: inline-block;
     color: rgb(45, 43, 43);
     font-weight: bold;
-    cursor: pointer;
+    cursor: help;
+    /* Изменение курсора при наведении */
 }
 
+/* Стиль иконки подсказки */
 .tooltip::after {
     content: "ⓘ";
     font-size: 0.7em;
@@ -758,10 +784,12 @@ header .logo img {
     vertical-align: baseline;
 }
 
+/* Эффект при наведении на подсказку */
 .tooltip:hover {
     color: #007bff;
 }
 
+/* Стили всплывающей подсказки */
 .tooltip .tooltiptext {
     visibility: hidden;
     background-color: #ffffff;
@@ -773,11 +801,12 @@ header .logo img {
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s;
-    white-space: nowrap;
     width: auto;
-    max-width: none;
+    max-width: 250px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border: 0.5px solid #ccc;
+    white-space: normal;
+    /* Разрешаем перенос текста */
 }
 
 /* Позиционирование подсказок */
@@ -787,6 +816,7 @@ header .logo img {
     transform: translateX(-50%);
 }
 
+/* Варианты позиционирования подсказок */
 .tooltip .tooltiptext.top-out {
     bottom: auto;
     top: 125%;
@@ -808,6 +838,7 @@ header .logo img {
     transform: translateX(0);
 }
 
+/* Показ подсказки при наведении */
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
@@ -816,13 +847,6 @@ header .logo img {
 /* ДОБАВЛЯЕМ ВНУТРЕННИЙ ОТСТУП СВЕРХУ ДЛЯ КОНТЕНТА */
 .content-wrapper {
     padding-top: 45px !important;
-    /* Жесткий отступ от верха блока до текста */
-}
-
-/* Увеличение ширины подсказок для длинных текстов */
-.tooltip[data-words="3"] .tooltiptext {
-    white-space: normal;
-    max-width: 250px;
 }
 
 /* Адаптивность для мобильных устройств */
@@ -848,18 +872,59 @@ header .logo img {
         max-height: 70vh;
     }
 
-    /* NEW: Адаптация подсказок для мобильных */
-    .additional-block .tooltip .tooltiptext {
-        max-width: 200px;
-        left: 10px !important;
+    /* АДАПТАЦИЯ ПОДСКАЗОК ДЛЯ МОБИЛЬНЫХ */
+    .tooltip .tooltiptext {
+        position: fixed;
+        bottom: 20px;
+        left: 20px !important;
+        right: 20px;
+        width: calc(100% - 40px);
+        max-width: none;
         transform: none !important;
+        margin: 0 auto;
     }
+
+    .tooltip .tooltiptext.top-out,
+    .tooltip .tooltiptext.bottom-out {
+        position: fixed;
+        bottom: 20px;
+        top: auto;
+    }
+}
+
+/*Стили для доп текста*/
+.problem-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+    color: #2c3e50;
+    /* Темно-синий цвет для заголовков */
+}
+
+.bold-italic-text {
+    font-weight: 600;
+    font-style: italic;
+    color: #943ab7;
+    /* Фиолетовый цвет */
+    background-color: #e9dcef;
+    /* Светло-фиолетовый фон */
+    padding: 2px 4px;
+    border-radius: 3px;
+    border-left: 2px solid #ce80ed;
+    border-right: 2px solid #ce80ed;
+}
+
+.section {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-left: 4px solid #48DBFB;
 }
 
 /* Стили для дополнительных блоков */
 .additional-block {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 /* Общие стили */
