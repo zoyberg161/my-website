@@ -267,6 +267,23 @@ header .logo img {
     transition: color 0.3s ease;
 }
 
+/* Выделение текста вопрос-ответ */
+.highlight {
+    animation: yellow-fade 5s;
+    border-left: 3px solid #FFD700;
+    padding-left: 10px;
+}
+
+@keyframes yellow-fade {
+    0% {
+        background-color: #FFF9C4;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
 /* Главный контейнер */
 .main-content {
     flex: 1;

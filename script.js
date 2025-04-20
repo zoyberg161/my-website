@@ -92,8 +92,14 @@ menuIcon.addEventListener('click', () => {
 
 // Закрываем навигацию при клике вне её области
 document.addEventListener('click', (event) => {
-  if (!nav.contains(event.target) && !menuIcon.contains(event.target)) {
-    nav.classList.remove('active');
+  const nav = document.querySelector('nav'); // или ваш конкретный селектор
+  const menuIcon = document.querySelector('.menu-icon'); // или ваш селектор
+
+  // Проверяем существование элементов перед работой с ними
+  if (nav && menuIcon) {
+    if (!nav.contains(event.target) && !menuIcon.contains(event.target)) {
+      nav.classList.remove('active');
+    }
   }
 });
 
@@ -356,3 +362,32 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// Раскрытие блока и подсветка вопроса
+function highlightQuestion() {
+  const hash = window.location.hash;
+  if (!hash) return;
+
+  // Находим вопрос по ID
+  const questionBlock = document.querySelector(hash);
+  if (!questionBlock) return;
+
+  // Раскрываем родительский блок советов
+  const adviceBlock = questionBlock.closest('.additional-block');
+  adviceBlock.querySelector('.additional-content').style.display = 'block';
+  adviceBlock.querySelector('.toggle-icon').textContent = '-';
+
+  // Подсветка на 5 секунд
+  questionBlock.classList.add('highlight');
+  setTimeout(() => {
+    questionBlock.classList.remove('highlight');
+  }, 5000);
+
+  // Плавная прокрутка
+  setTimeout(() => {
+    questionBlock.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    });
+  }, 300);
+}
