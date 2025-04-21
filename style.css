@@ -269,8 +269,8 @@ header .logo img {
 
 /* Выделение текста вопрос-ответ */
 .highlight {
-    animation: yellow-fade 5s;
-    border-left: 3px solid #FFD700;
+    animation: yellow-fade 15s;
+    border-left: 4px solid #FFD700;
     padding-left: 10px;
 }
 
@@ -855,14 +855,21 @@ header .logo img {
     margin-bottom: 30px;
     padding: 15px;
     background-color: #ffffff;
-    border-left: 2px solid #a6ec85;
+    border-left: 6px solid #a6ec85;
 }
 
 .section1 {
     margin-bottom: 30px;
     padding: 15px;
     background-color: #ffffff;
-    border-left: 2px solid #d6f676;
+    border-left: 6px solid #d6f676;
+}
+
+.section2 {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-left: 6px solid #f5f2c2;
 }
 
 /* Стили для дополнительных блоков */
