@@ -993,6 +993,10 @@ header .logo img {
 
 /* Адаптивность для мобильных */
 @media (max-width: 768px) {
+    .additional-block.active .additional-content {
+        max-height: 3500px;
+    }
+
     .additional-header h4 {
         font-size: 16px;
     }
