@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /node_modules/  # Закрываем служебные каталоги npm
+Disallow: /private/       # На будущее - служебные данные
+
+# Sitemap (указываем полный URL)
+Sitemap: https://uslugi161.ru/sitemap.xml
