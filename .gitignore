@@ -1,8 +1,8 @@
-/CNAME
-/robots.txt
-/node_modules/
-
 # npm
 /package.json
 /package-lock.json
 
+# Но разрешить отслеживание SEO-файлов
+!/CNAME
+!/robots.txt
+!/sitemap.xml
