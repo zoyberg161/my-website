@@ -267,21 +267,12 @@ header .logo img {
     transition: color 0.3s ease;
 }
 
-/* Выделение текста вопрос-ответ */
-.highlight {
-    animation: yellow-fade 15s;
-    border-left: 4px solid #FFD700;
-    padding-left: 10px;
-}
 
-@keyframes yellow-fade {
-    0% {
-        background-color: #FFF9C4;
-    }
-
-    100% {
-        background-color: transparent;
-    }
+/* Улучшаем видимость подсвеченного ответа */
+.section1.highlighted-answer,
+.term-item.highlighted-answer {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
 }
 
 /* Главный контейнер */

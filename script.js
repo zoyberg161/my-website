@@ -1,3 +1,70 @@
+// Добавляем в начало вашего скрипта
+document.addEventListener('DOMContentLoaded', function () {
+  // Функция для обработки якорных ссылок
+  function handleAnchorLinks() {
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    // Находим элемент по ID
+    const targetElement = document.querySelector(hash);
+    if (!targetElement) return;
+
+    // Находим родительский блок с ответом (либо сам элемент, либо его родительский абзац)
+    let answerBlock = targetElement;
+    if (!answerBlock.classList.contains('answer-block')) {
+      answerBlock =
+        answerBlock.closest('p, .section1, .term-item') || answerBlock;
+    }
+
+    // Проверяем, находится ли элемент в скрытом блоке
+    const adviceBlock = answerBlock.closest('.additional-block');
+    if (adviceBlock) {
+      // Раскрываем блок
+      adviceBlock.classList.add('active');
+      const content = adviceBlock.querySelector('.additional-content');
+      if (content) {
+        content.style.display = 'block';
+      }
+      const toggleIcon = adviceBlock.querySelector('.toggle-icon');
+      if (toggleIcon) {
+        toggleIcon.textContent = '-';
+      }
+    }
+
+    // Подсвечиваем весь блок ответа
+    answerBlock.classList.add('highlighted-answer');
+
+    // Плавная прокрутка к элементу
+    setTimeout(() => {
+      answerBlock.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      });
+    }, 300);
+
+    // Убираем подсветку через 8 секунд
+    setTimeout(() => {
+      answerBlock.classList.remove('highlighted-answer');
+    }, 8000);
+  }
+
+  // Обрабатываем якорные ссылки при загрузке страницы
+  handleAnchorLinks();
+
+  // Обрабатываем якорные ссылки при изменении hash
+  window.addEventListener('hashchange', handleAnchorLinks);
+
+  // Модифицируем smooth scroll для ссылок
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach((link) => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+      const targetId = this.getAttribute('href');
+      window.location.hash = targetId; // Это вызовет hashchange
+    });
+  });
+});
+
 // Smooth scroll для ссылок
 const links = document.querySelectorAll('a[href^="#"]');
 links.forEach((link) => {
