@@ -288,11 +288,33 @@ header .logo img {
 .highlighted-answer {
     animation: highlight-fade 8s ease-out;
     background-color: #d6f676da;
-    /* Ярко-желтый фон */
     padding: 15px;
     margin: 10px 0;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+    border-left: 3px solid #8bc34a;
+}
+
+@keyframes highlight-fade {
+    0% {
+        background-color: #d6f676;
+    }
+
+    70% {
+        background-color: #d6f676;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Для терминов */
+.term-item.highlighted-answer {
+    padding: 10px;
+    margin: 5px 0;
 }
 
 @keyframes highlight-fade {
