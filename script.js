@@ -8,13 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const targetElement = document.querySelector(hash);
     if (!targetElement) return;
 
-    // Находим родительский блок с ответом
-    let answerBlock = targetElement;
-    if (!answerBlock.classList.contains('answer-block')) {
-      answerBlock =
-        answerBlock.closest('p, .section1, .term-item, .additional-block') ||
-        answerBlock;
-    }
+    // Находим ближайший блок для подсветки (расширенный список классов)
+    let answerBlock =
+      targetElement.closest(
+        '.section, .section1, .term-item, p, .problem-title'
+      ) || targetElement;
 
     // Проверяем, находится ли элемент в скрытом блоке
     const adviceBlock = answerBlock.closest('.additional-block');
@@ -31,12 +29,23 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    // Подсвечиваем весь блок ответа
-    answerBlock.classList.add('highlighted-answer');
+    // Удаляем старую подсветку
+    document.querySelectorAll('.highlighted-answer').forEach((el) => {
+      el.classList.remove('highlighted-answer');
+    });
+
+    // Подсвечиваем сам элемент и его заголовок (если есть)
+    targetElement.classList.add('highlighted-answer');
+    const problemTitle =
+      targetElement.querySelector('.problem-title') ||
+      targetElement.previousElementSibling;
+    if (problemTitle && problemTitle.classList.contains('problem-title')) {
+      problemTitle.classList.add('highlighted-answer');
+    }
 
     // Плавная прокрутка к элементу
     setTimeout(() => {
-      answerBlock.scrollIntoView({
+      targetElement.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
       });
@@ -44,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Убираем подсветку через 8 секунд
     setTimeout(() => {
-      answerBlock.classList.remove('highlighted-answer');
+      targetElement.classList.remove('highlighted-answer');
+      if (problemTitle) problemTitle.classList.remove('highlighted-answer');
     }, 8000);
   }
 
@@ -60,12 +70,12 @@ document.addEventListener('DOMContentLoaded', function () {
     link.addEventListener('click', function (event) {
       event.preventDefault();
       const targetId = this.getAttribute('href');
-      window.location.hash = targetId; // Это вызовет hashchange
+      window.location.hash = targetId;
     });
   });
 });
 
-// Валидация формы
+// Валидация формы остается без изменений
 const form = document.querySelector('form');
 if (form) {
   form.addEventListener('submit', function (event) {

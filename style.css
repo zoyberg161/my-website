@@ -297,6 +297,28 @@ header .logo img {
     border-left: 3px solid #8bc34a;
 }
 
+/* Для заголовков вопросов */
+.problem-title.highlighted-answer {
+    background-color: #d6f676;
+    padding: 10px;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 0;
+}
+
+/* Для обычных секций */
+.section.highlighted-answer,
+.section1.highlighted-answer {
+    animation: highlight-fade 8s ease-out;
+    background-color: #d6f676da;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+    border-left: 3px solid #8bc34a;
+}
+
 @keyframes highlight-fade {
     0% {
         background-color: #d6f676;
