@@ -267,6 +267,61 @@ header .logo img {
     transition: color 0.3s ease;
 }
 
+/* Выделение текста вопрос-ответ */
+.highlight {
+    animation: yellow-fade 15s;
+    border-left: 4px solid #FFD700;
+    padding-left: 10px;
+}
+
+@keyframes yellow-fade {
+    0% {
+        background-color: #FFF9C4;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Выделение текста */
+.highlighted-answer {
+    animation: highlight-fade 8s ease-out;
+    background-color: #d6f676da;
+    /* Ярко-желтый фон */
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes highlight-fade {
+    0% {
+        background-color: #fff176;
+    }
+
+    /* Ярко-желтый */
+    70% {
+        background-color: #fff176;
+    }
+
+    /* Держим цвет 70% времени */
+    100% {
+        background-color: transparent;
+    }
+
+    /* Плавно исчезаем */
+}
+
+/* Для раскрывающихся блоков */
+.additional-block.active .additional-content {
+    display: block !important;
+}
+
+.additional-block.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
 
 /* Улучшаем видимость подсвеченного ответа */
 .section1.highlighted-answer,

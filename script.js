@@ -1,108 +1,25 @@
-// Добавляем в начало вашего скрипта
-document.addEventListener('DOMContentLoaded', function () {
-  // Функция для обработки якорных ссылок
-  function handleAnchorLinks() {
-    const hash = window.location.hash;
-    if (!hash) return;
+// Вместо нескольких обработчиков scroll можно использовать один
+let scrollTimeout;
+window.addEventListener('scroll', function () {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(() => {
+    // Обработка кнопки "Наверх"
+    const scrollPosition = window.scrollY;
+    const pageHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    document.querySelector('.scroll-to-top').style.display =
+      scrollPosition > pageHeight * 0.7 ? 'block' : 'none';
 
-    // Находим элемент по ID
-    const targetElement = document.querySelector(hash);
-    if (!targetElement) return;
-
-    // Находим родительский блок с ответом (либо сам элемент, либо его родительский абзац)
-    let answerBlock = targetElement;
-    if (!answerBlock.classList.contains('answer-block')) {
-      answerBlock =
-        answerBlock.closest('p, .section1, .term-item') || answerBlock;
-    }
-
-    // Проверяем, находится ли элемент в скрытом блоке
-    const adviceBlock = answerBlock.closest('.additional-block');
-    if (adviceBlock) {
-      // Раскрываем блок
-      adviceBlock.classList.add('active');
-      const content = adviceBlock.querySelector('.additional-content');
-      if (content) {
-        content.style.display = 'block';
-      }
-      const toggleIcon = adviceBlock.querySelector('.toggle-icon');
-      if (toggleIcon) {
-        toggleIcon.textContent = '-';
-      }
-    }
-
-    // Подсвечиваем весь блок ответа
-    answerBlock.classList.add('highlighted-answer');
-
-    // Плавная прокрутка к элементу
-    setTimeout(() => {
-      answerBlock.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-      });
-    }, 300);
-
-    // Убираем подсветку через 8 секунд
-    setTimeout(() => {
-      answerBlock.classList.remove('highlighted-answer');
-    }, 8000);
-  }
-
-  // Обрабатываем якорные ссылки при загрузке страницы
-  handleAnchorLinks();
-
-  // Обрабатываем якорные ссылки при изменении hash
-  window.addEventListener('hashchange', handleAnchorLinks);
-
-  // Модифицируем smooth scroll для ссылок
-  const links = document.querySelectorAll('a[href^="#"]');
-  links.forEach((link) => {
-    link.addEventListener('click', function (event) {
-      event.preventDefault();
-      const targetId = this.getAttribute('href');
-      window.location.hash = targetId; // Это вызовет hashchange
-    });
-  });
-});
-
-// Smooth scroll для ссылок
-const links = document.querySelectorAll('a[href^="#"]');
-links.forEach((link) => {
-  link.addEventListener('click', function (event) {
-    event.preventDefault();
-    const targetId = this.getAttribute('href');
-    const targetElement = document.querySelector(targetId);
-
-    if (targetElement) {
-      targetElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  });
-});
-
-// Валидация формы
-const form = document.querySelector('form');
-if (form) {
-  form.addEventListener('submit', function (event) {
-    const nameInput = form.querySelector('input[type="text"]');
-    const phoneInput = form.querySelector('input[type="tel"]');
-
-    if (nameInput.value.trim() === '' || phoneInput.value.trim() === '') {
-      event.preventDefault();
-      alert('Пожалуйста, заполните все поля!');
+    // Обработка кнопки "Позвонить"
+    const scrollPercentage = (scrollPosition / pageHeight) * 100;
+    const callButton = document.getElementById('callButton');
+    if (isTimeoutPassed && scrollPercentage > 35) {
+      callButton.classList.add('visible');
     } else {
-      console.log('Форма успешно отправлена!');
+      callButton.classList.remove('visible');
     }
-  });
-}
-
-// Функция для проверки, прошло ли 5 секунд
-let isTimeoutPassed = false;
-setTimeout(() => {
-  isTimeoutPassed = true;
-}, 5000); // 5 секунд
+  }, 100);
+});
 
 // Обработка прокрутки для кнопки "Позвонить" (35%)
 window.addEventListener('scroll', function () {
