@@ -91,6 +91,12 @@ if (form) {
   });
 }
 
+// Функция для проверки, прошло ли 5 секунд
+let isTimeoutPassed = false;
+setTimeout(() => {
+  isTimeoutPassed = true;
+}, 5000); // 5 секунд
+
 // Обработка прокрутки для кнопки "Позвонить" (35%)
 window.addEventListener('scroll', function () {
   const callButton = document.getElementById('callButton');
