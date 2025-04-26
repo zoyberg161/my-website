@@ -269,7 +269,7 @@ header .logo img {
 
 /* Выделение текста вопрос-ответ */
 .highlight {
-    animation: yellow-fade 15s;
+    animation: yellow-fade 10s;
     border-left: 4px solid #ffec80df;
     padding-left: 10px;
 }
