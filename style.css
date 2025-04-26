@@ -270,7 +270,7 @@ header .logo img {
 /* Выделение текста вопрос-ответ */
 .highlight {
     animation: yellow-fade 10s;
-    border-left: 4px solid #ffec80df;
+    border-left: 4px solid #f7e894df;
     padding-left: 10px;
 }
 
@@ -341,12 +341,12 @@ header .logo img {
 
 @keyframes highlight-fade {
     0% {
-        background-color: #fff176;
+        background-color: #f7e894df;
     }
 
     /* Ярко-желтый */
     70% {
-        background-color: #fff176;
+        background-color: #f7e894df;
     }
 
     /* Держим цвет 70% времени */
