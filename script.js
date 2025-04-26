@@ -445,3 +445,22 @@ function highlightQuestion() {
     });
   }, 300);
 }
+
+// Соответствие старых URL → новым якорям
+const redirectMap = {
+  '/product/remont-rolstaven': '#roller-shutters-advice',
+  '/product/remont-rolvorot': '#repair-roller-gates',
+  '/page/kontakty': '#footer-contact',
+};
+
+// Проверяем реферер (откуда пришёл пользователь)
+const referrer = document.referrer;
+const oldDomain = 'frunze.myinsales.ru';
+
+// Если переход со старого сайта
+if (referrer.includes(oldDomain)) {
+  const path = new URL(referrer).pathname; // Получаем путь из referrer
+  if (redirectMap[path]) {
+    window.location.href = `https://uslugi161.ru${redirectMap[path]}`;
+  }
+}
