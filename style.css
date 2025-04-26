@@ -713,14 +713,16 @@ header .logo img {
     width: 100%;
     max-width: 800px;
     background: linear-gradient(to bottom,
-            #f4f2d2af 0%,
-            #f4f2d2af 40%,
-            white 60%,
+            white 0%,
+            #a1ca9814 30%,
+            #a1ca9869 50%,
+            white 65%,
             white 80%,
-            #f4f2d2af 100%);
+            #a1ca9869 95%,
+            #a1ca9869 100%);
     border-radius: 8px;
     padding: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.002);
+
     margin-bottom: 10px;
 }
 
