@@ -1,7 +1,10 @@
 User-agent: *
+Host: uslugi161.ru
 Allow: /
-Disallow: /node_modules/  # Закрываем служебные каталоги npm
-Disallow: /private/       # На будущее - служебные данные
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.vscode/
+Disallow: /dist/
 
-# Sitemap (указываем полный URL)
+# Sitemaps
 Sitemap: https://uslugi161.ru/sitemap.xml
