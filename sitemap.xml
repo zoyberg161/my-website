@@ -16,6 +16,21 @@
     <priority>0.9</priority>
   </url>
   
+  <!-- Ремонт рольворот -->
+  <url>
+    <loc>https://uslugi161.ru/#repair-roller-gates</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Ремонт рольставней -->
+  <url>
+    <loc>https://uslugi161.ru/#roller-shutters-advice</loc>
+    <lastmod>2024-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Преимущества -->
   <url>
     <loc>https://uslugi161.ru/#advantages</loc>
