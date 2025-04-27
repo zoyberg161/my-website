@@ -1425,7 +1425,7 @@ footer p.contact-info a:hover {
     height: 50px;
     border-radius: 8px;
     transition: background-color 0.3s ease;
-    background-color: #7790899c;
+    background-color: #7790899b;
 }
 
 .menu-icon img.menu-default {
@@ -1460,6 +1460,32 @@ footer p.contact-info a:hover {
 
 .menu-icon:hover img.menu-hover {
     opacity: 1;
+}
+
+/* Стили для выпадающего меню */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 250px;
+    background-color: #779089b9;
+    border-radius: 8px;
+    padding: 10px 0;
+    margin-top: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Показываем кнопку меню только на мобильных устройствах */

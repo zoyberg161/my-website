@@ -451,3 +451,25 @@ function highlightQuestion() {
     });
   }, 300);
 }
+
+// Для списка в кнопке меню
+document.addEventListener('DOMContentLoaded', function () {
+  const menuButton = document.getElementById('menuButton');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+
+  menuButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (dropdownMenu.style.display === 'block') {
+      dropdownMenu.style.display = 'none';
+    } else {
+      dropdownMenu.style.display = 'block';
+    }
+  });
+
+  // Закрываем меню при клике вне его области
+  document.addEventListener('click', function (e) {
+    if (!menuButton.contains(e.target)) {
+      dropdownMenu.style.display = 'none';
+    }
+  });
+});
