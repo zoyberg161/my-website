@@ -1,7 +1,7 @@
 {
-  "name": "Ростов-сервис — ремонт рольворот и рольставней",
-  "short_name": "Ростов-сервис",
-  "description": "Профессиональный ремонт рольставней в Ростове-на-Дону",
+  "name": "Ростов-Сервис — ремонт рольворот и рольставней",
+  "short_name": "Ростов-Сервис",
+  "description": "Профессиональный ремонт рольставней и рольворот в Ростове-на-Дону. Реальная гарантия, выезд в течение часа.",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -16,7 +16,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+  "theme_color": "#f4f2d2",
+  "background_color": "#f4f2d2",
   "display": "standalone"
 }
