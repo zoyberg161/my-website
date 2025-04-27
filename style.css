@@ -1,18 +1,15 @@
-/* Подключение шрифта Roboto Mono через Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap');
 
 a.tooltip {
     text-decoration: none;
 }
 
-/* Глобальная настройка для всех элементов */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Убираем горизонтальный скроллбар */
 html,
 body {
     margin: 0 !important;
@@ -31,7 +28,6 @@ body {
     padding: 0;
 }
 
-/* Основные стили для шапки сайта */
 header {
     display: flex;
     justify-content: space-between;
@@ -50,7 +46,6 @@ header {
     overflow: hidden;
 }
 
-/* Луч, который пробегает по шапке */
 header::before {
     content: '';
     position: absolute;
@@ -67,7 +62,6 @@ header::before {
     opacity: 0;
 }
 
-/* Анимация луча */
 @keyframes beam {
     0% {
         transform: translateX(-100%) rotate(45deg);
@@ -85,10 +79,8 @@ header::before {
     }
 }
 
-/* Медиазапрос для мобильных устройств */
 @media (max-width: 768px) {
 
-    /* Шапка в мобильном режиме */
     header {
         flex-direction: column !important;
         align-items: center !important;
@@ -96,13 +88,11 @@ header::before {
         padding: 10px !important;
     }
 
-    /* Кнопка меню остается на своем месте */
     .menu-icon {
         align-self: flex-start !important;
         margin-bottom: 10px !important;
     }
 
-    /* Логотип в центре */
     .logo {
         order: 2 !important;
         width: 100% !important;
@@ -110,7 +100,6 @@ header::before {
         margin-bottom: 10px !important;
     }
 
-    /* Номер телефона в центре */
     .header-contacts {
         order: 3 !important;
         width: 100% !important;
@@ -118,19 +107,16 @@ header::before {
         align-items: center !important;
     }
 
-    /* Сбрасываем выравнивание для .header-phone */
     .header-phone {
         justify-content: center !important;
     }
 
-    /* Скрываем навигацию и адрес на телефонах */
     nav,
     .header-city {
         display: none !important;
     }
 }
 
-/* Для широких экранов */
 @media (min-width: 1200px) {
     header {
         background-size: 100% 100%;
@@ -146,7 +132,6 @@ header::before {
     z-index: 1;
 }
 
-/* Стили для логотипа в шапке */
 header .logo {
     flex: 1;
     position: relative;
@@ -158,7 +143,6 @@ header .logo img {
     width: auto;
 }
 
-/* Анимация пульсации логотипа */
 .logo img {
     animation: pulse 4s ease-in-out infinite;
 }
@@ -177,7 +161,6 @@ header .logo img {
     }
 }
 
-/* Медиазапрос для мобильных устройств */
 @media (max-width: 768px) {
     header {
         flex-direction: column !important;
@@ -215,14 +198,12 @@ header .logo img {
     }
 }
 
-/* Для широких экранов */
 @media (min-width: 1200px) {
     header {
         background-size: 100% 100%;
     }
 }
 
-/* Стили для контактов в шапке */
 .header-contacts {
     flex: 1;
     text-align: right;
@@ -267,7 +248,6 @@ header .logo img {
     transition: color 0.3s ease;
 }
 
-/* Выделение текста вопрос-ответ */
 .highlight {
     animation: yellow-fade 10s;
     border-left: 4px solid #f7e894df;
@@ -284,7 +264,6 @@ header .logo img {
     }
 }
 
-/* Выделение текста */
 .highlighted-answer {
     animation: highlight-fade 8s ease-out;
     background-color: #d6f676da;
@@ -297,7 +276,6 @@ header .logo img {
     border-left: 3px solid #8bc34a;
 }
 
-/* Для заголовков вопросов */
 .problem-title.highlighted-answer {
     background-color: #d6f676;
     padding: 10px;
@@ -305,7 +283,6 @@ header .logo img {
     margin-bottom: 0;
 }
 
-/* Для обычных секций */
 .section.highlighted-answer,
 .section1.highlighted-answer {
     animation: highlight-fade 8s ease-out;
@@ -333,7 +310,6 @@ header .logo img {
     }
 }
 
-/* Для терминов */
 .term-item.highlighted-answer {
     padding: 10px;
     margin: 5px 0;
@@ -344,20 +320,16 @@ header .logo img {
         background-color: #f7e894df;
     }
 
-    /* Ярко-желтый */
     70% {
         background-color: #f7e894df;
     }
 
-    /* Держим цвет 70% времени */
     100% {
         background-color: transparent;
     }
 
-    /* Плавно исчезаем */
 }
 
-/* Для раскрывающихся блоков */
 .additional-block.active .additional-content {
     display: block !important;
 }
@@ -367,14 +339,12 @@ header .logo img {
 }
 
 
-/* Улучшаем видимость подсвеченного ответа */
 .section1.highlighted-answer,
 .term-item.highlighted-answer {
     transform: scale(1.02);
     transition: transform 0.3s ease;
 }
 
-/* Главный контейнер */
 .main-content {
     flex: 1;
     padding: 10px;
@@ -385,7 +355,6 @@ header .logo img {
     box-sizing: border-box;
 }
 
-/* Основные стили секции hero */
 .hero {
     text-align: center;
     padding: 30px;
@@ -393,14 +362,12 @@ header .logo img {
     font-family: Arial, sans-serif;
 }
 
-/* Стили заголовка */
 .hero h1 {
     font-size: 20px;
     color: #2d2c2cf8;
     margin-bottom: 20px;
 }
 
-/* Стили основного текста */
 .hero p {
     color: #2d2c2cf8;
     line-height: 1.1;
@@ -409,13 +376,11 @@ header .logo img {
     font-size: 17px;
 }
 
-/* Стили для выделенного текста */
 .highlight {
     font-weight: bold;
     color: #3a3939;
 }
 
-/* Общие стили для всех секций */
 #services,
 #advantages,
 #reviews,
@@ -425,13 +390,11 @@ header .logo img {
     font-family: 'Roboto Mono', monospace;
 }
 
-/* Общие стили */
 .advantages {
     text-align: center;
     padding: 30px 0;
 }
 
-/* Раздиляющая анимированая полоса */
 .divider {
     border: 0;
     height: 1px;
@@ -448,7 +411,6 @@ header .logo img {
     opacity: 0.7;
 }
 
-/* Главный стикер-заголовок */
 .main-sticker {
     width: 300px;
     height: 150px;
@@ -494,7 +456,6 @@ header .logo img {
     filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.2));
 }
 
-/* Контейнер стикеров */
 .stickers-container {
     display: flex;
     flex-direction: column;
@@ -502,7 +463,6 @@ header .logo img {
     gap: 20px;
 }
 
-/* Стили для стикеров */
 .sticker {
     width: 250px;
     height: 125px;
@@ -563,7 +523,6 @@ header .logo img {
     transform: translate(-50%, -50%);
 }
 
-/* Цвета стикеров */
 .fast-sticker {
     background: linear-gradient(135deg, #d6f676da 0%, #d9ee63 100%);
     color: #333;
@@ -579,7 +538,6 @@ header .logo img {
     color: #333;
 }
 
-/* Анимация стрелки */
 @keyframes bounce {
 
     0%,
@@ -599,7 +557,6 @@ header .logo img {
     }
 }
 
-/* Десктопная версия */
 @media (min-width: 768px) {
     .stickers-container {
         flex-direction: row;
@@ -622,7 +579,6 @@ header .logo img {
     }
 }
 
-/* Мобильная адаптация */
 @media (max-width: 480px) {
     .main-sticker {
         width: 90%;
@@ -643,7 +599,6 @@ header .logo img {
     }
 }
 
-/* Стили ТОЛЬКО для блока с контактами (не влияет на другие секции) */
 .advantages p {
     font-family: 'Roboto Mono', monospace;
     font-size: 10px;
@@ -651,7 +606,6 @@ header .logo img {
     margin: 5px 0;
 }
 
-/* Стили для ссылки-почты внутри .advantages */
 .advantages a {
     color: #272727;
     text-decoration: none;
@@ -662,13 +616,11 @@ header .logo img {
     color: #007bff;
 }
 
-/* Дополнительно: стиль для заголовка внутри advantages */
 .advantages h2 {
     font-size: 16px;
     margin-bottom: 15px;
 }
 
-/* Стили для нового контейнера */
 .content-container {
     background-color: rgba(255, 255, 255, 0.746);
     padding: 20px;
@@ -680,7 +632,6 @@ header .logo img {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.124);
 }
 
-/* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
     .content-container {
         padding: 15px;
@@ -690,14 +641,12 @@ header .logo img {
     }
 }
 
-/* Адаптация для широких экранов */
 @media (min-width: 1200px) {
     .content-container {
         max-width: 1400px;
     }
 }
 
-/* Контейнер для всех карточек услуг */
 .services-container {
     display: flex;
     flex-direction: column;
@@ -708,7 +657,6 @@ header .logo img {
     margin: 0 auto;
 }
 
-/* Стили для карточки услуги */
 .service-card {
     width: 100%;
     max-width: 800px;
@@ -726,7 +674,6 @@ header .logo img {
     margin-bottom: 10px;
 }
 
-/* Контейнер для изображения */
 .service-image {
     width: 10cm;
     height: 9cm;
@@ -743,25 +690,21 @@ header .logo img {
     cursor: pointer;
 }
 
-/* Скрываем дополнительные изображения */
 .service-image .additional-images {
     display: none;
 }
 
-/* Контейнер для текста (заголовок и описание) */
 .service-content {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-/* Заголовок услуги */
 .service-title {
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Текст услуги */
 .service-text {
     text-align: left;
     font-family: Arial, sans-serif;
@@ -769,14 +712,12 @@ header .logo img {
     line-height: 1.6;
 }
 
-/* Список в тексте - УБИРАЕМ СТАНДАРТНЫЕ МАРКЕРЫ */
 .service-text ul {
     list-style: none !important;
     padding-left: 0 !important;
     margin-left: 0;
 }
 
-/* Стили для элементов списка с кастомными маркерами */
 .service-text li {
     position: relative;
     padding-left: 28px;
@@ -785,7 +726,6 @@ header .logo img {
     list-style-type: none !important;
 }
 
-/* Кастомные квадратные маркеры */
 .service-text li::before {
     content: "";
     position: absolute;
@@ -798,7 +738,6 @@ header .logo img {
     border-left: 3px solid #d7a2f8;
 }
 
-/* Стили для подсказок (основные) */
 .tooltip {
     position: relative;
     display: inline-block;
@@ -807,7 +746,6 @@ header .logo img {
     cursor: help;
 }
 
-/* Стиль иконки подсказки */
 .tooltip::after {
     content: "ℹ";
     font-size: 0.7em;
@@ -818,12 +756,10 @@ header .logo img {
     vertical-align: baseline;
 }
 
-/* Эффект при наведении на подсказку */
 .tooltip:hover {
     color: #007bff;
 }
 
-/* Стили всплывающей подсказки */
 .tooltip .tooltiptext {
     visibility: hidden;
     background-color: #d6f676ea;
@@ -842,14 +778,12 @@ header .logo img {
     white-space: normal;
 }
 
-/* Позиционирование подсказок */
 .tooltip .tooltiptext {
     bottom: 125%;
     left: 50%;
     transform: translateX(-50%);
 }
 
-/* Варианты позиционирования подсказок */
 .tooltip .tooltiptext.top-out {
     bottom: auto;
     top: 125%;
@@ -871,18 +805,15 @@ header .logo img {
     transform: translateX(0);
 }
 
-/* Показ подсказки при наведении */
 .tooltip:hover .tooltiptext {
     visibility: visible;
     opacity: 1;
 }
 
-/* Добавляем внутренний отступ сверху для контента */
 .content-wrapper {
     padding-top: 45px !important;
 }
 
-/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
     .service-card {
         flex-direction: column;
@@ -905,7 +836,6 @@ header .logo img {
         max-height: 70vh;
     }
 
-    /* даптация подсказок для мобильных */
     .tooltip .tooltiptext {
         position: fixed;
         bottom: 20px;
@@ -925,7 +855,6 @@ header .logo img {
     }
 }
 
-/*Стили для доп текста*/
 .problem-title {
     font-weight: bold;
     margin-bottom: 10px;
@@ -964,13 +893,11 @@ header .logo img {
     border-left: 6px solid #f5f2c2;
 }
 
-/* Стили для дополнительных блоков */
 .additional-block {
     width: 100%;
     margin-top: 15px;
 }
 
-/* Основной контейнер - центрирует содержимое */
 .main-container {
     flex: 1;
     display: flex;
@@ -979,7 +906,6 @@ header .logo img {
     padding: 20px 0;
 }
 
-/* Стили для блока отзывов */
 .reviews-section {
     width: 100% !important;
     padding: 40px 0 !important;
@@ -1008,7 +934,6 @@ header .logo img {
     display: block !important;
 }
 
-/* Адаптация под мобильные */
 @media (max-width: 768px) {
     .reviews-section {
         min-height: 80vh;
@@ -1074,7 +999,6 @@ header .logo img {
     padding: 15px;
 }
 
-/* Открытое состояние */
 .additional-block.active .additional-content {
     max-height: 2000px;
 }
@@ -1083,7 +1007,6 @@ header .logo img {
     transform: rotate(45deg);
 }
 
-/* Адаптивность для мобильных */
 @media (max-width: 768px) {
     .additional-block.active .additional-content {
         max-height: 3500px;
@@ -1098,7 +1021,6 @@ header .logo img {
     }
 }
 
-/* Стили для полноэкранного просмотра изображений */
 #fullscreen-overlay {
     display: none;
     position: fixed;
@@ -1160,14 +1082,12 @@ header .logo img {
     object-fit: contain;
 }
 
-/* Для узких экранов (ширина меньше 1200px) */
 @media (max-width: 1199px) {
     .service-card {
         width: 100%;
     }
 }
 
-/* Для очень широких экранов */
 @media (min-width: 1600px) {
     .service-card {
         max-width: 1200px;
@@ -1182,7 +1102,6 @@ header .logo img {
     }
 }
 
-/* Скрыть кнопку "Позвонить" на компьютерной версии */
 @media (min-width: 768px) {
     .call-button {
         display: none !important;
@@ -1201,7 +1120,6 @@ header .logo img {
     line-height: 1.5;
 }
 
-/* Подвал */
 footer {
     text-align: center;
     padding: 22.4px;
@@ -1225,7 +1143,6 @@ footer {
     justify-content: center;
 }
 
-/* Создание выреза */
 footer::before {
     content: '';
     position: absolute;
@@ -1244,7 +1161,6 @@ footer::before {
     opacity: 1;
 }
 
-/* Стили для кнопки "Позвонить" */
 .call-button {
     position: fixed;
     right: -100px;
@@ -1273,7 +1189,6 @@ footer::before {
     color: #34d0ef;
 }
 
-/* Стили для кнопки закрытия */
 .close-button {
     background-color: transparent;
     border: none;
@@ -1291,7 +1206,6 @@ footer::before {
     color: #e40707c1;
 }
 
-/* Стили для основных надписей */
 footer p.contact-info {
     font-size: 17px;
     font-weight: bold;
@@ -1302,7 +1216,6 @@ footer p.contact-info {
     z-index: 2;
 }
 
-/* Стиль для строки с правами */
 footer .copyright {
     font-size: 10px;
     font-weight: normal;
@@ -1313,14 +1226,12 @@ footer .copyright {
     z-index: 2;
 }
 
-/* Стили для ссылок в подвале (убираем подчёркивание) */
 footer p.contact-info a {
     text-decoration: none;
     color: inherit;
     transition: color 0.3s ease;
 }
 
-/* Стили для иконок */
 footer p.contact-info .fa-phone,
 footer p.contact-info .fa-map-marker-alt {
     color: #484848;
@@ -1333,7 +1244,6 @@ footer p.contact-info a:hover {
     color: #007bff;
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     footer::before {
         width: 350px;
@@ -1360,7 +1270,6 @@ footer p.contact-info a:hover {
     }
 }
 
-/* Стили для кнопки "Наверх" */
 .scroll-to-top {
     display: none;
     position: fixed;
@@ -1405,7 +1314,6 @@ footer p.contact-info a:hover {
     opacity: 1;
 }
 
-/* Изменение позиции для мобильной версии */
 @media (max-width: 768px) {
     .scroll-to-top {
         bottom: 63px;
@@ -1413,7 +1321,6 @@ footer p.contact-info a:hover {
     }
 }
 
-/* Стили для кнопки меню */
 .menu-icon {
     display: none;
     position: fixed;
@@ -1462,7 +1369,6 @@ footer p.contact-info a:hover {
     opacity: 1;
 }
 
-/* Стили для выпадающего меню */
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -1488,7 +1394,6 @@ footer p.contact-info a:hover {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Показываем кнопку меню только на мобильных устройствах */
 @media (max-width: 768px) {
     .menu-icon {
         display: block;
