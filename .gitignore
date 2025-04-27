@@ -1,6 +1,8 @@
-# npm
-/package.json
-/package-lock.json
+# npm/yarn
+node_modules/
+.DS_Store
+dist/
+*.log
 
 # Но разрешить отслеживание SEO-файлов
 !/CNAME
