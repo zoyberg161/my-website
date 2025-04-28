@@ -1,10 +1,8 @@
 User-agent: *
-Host: uslugi161.ru
 Allow: /
 Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /.vscode/
 Disallow: /dist/
 
-# Sitemaps
 Sitemap: https://uslugi161.ru/sitemap.xml
