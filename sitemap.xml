@@ -3,14 +3,29 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <!-- Главный URL с группировкой по темам -->
-  <url>
-    <loc>https://uslugi161.ru/</loc>
-    <lastmod>2024-03-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <xhtml:link rel="alternate" href="https://uslugi161.ru/#repair-roller-gates"/>
-    <xhtml:link rel="alternate" href="https://uslugi161.ru/#roller-shutters-advice"/>
-  </url>
+<url>
+  <loc>https://uslugi161.ru/</loc>
+  <lastmod>2024-03-15</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.0</priority>
+  <xhtml:link rel="alternate" href="https://uslugi161.ru/" hreflang="ru"/>
+</url>
+
+<url>
+  <loc>https://uslugi161.ru/#repair-roller-gates</loc>
+  <lastmod>2024-03-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+  <xhtml:link rel="alternate" href="https://uslugi161.ru/#repair-roller-gates" hreflang="ru"/>
+</url>
+
+<url>
+  <loc>https://uslugi161.ru/#roller-shutters-advice</loc>
+  <lastmod>2024-03-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.9</priority>
+  <xhtml:link rel="alternate" href="https://uslugi161.ru/#roller-shutters-advice" hreflang="ru"/>
+</url>
 
   <!-- Все вопросы по рольворотам -->
   <url>
