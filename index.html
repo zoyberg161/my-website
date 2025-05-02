@@ -304,6 +304,57 @@
 }
 </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Почему выбирают Ростов-Сервис?",
+    "description": "Ключевые преимущества ремонта рольставней в Ростове-на-Дону",
+    "url": "https://uslugi161.ru/#advantages",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://uslugi161.ru/#fast",
+        "name": "Срочный выезд",
+        "description": "В течение 60 минут по Ростову-на-Дону",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://uslugi161.ru/images/clock-icon.svg",
+          "width": "100",
+          "height": "100"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://uslugi161.ru/#quality",
+        "name": "Оригинальные комплектующие",
+        "description": "Doorhan, Alutech, Nice с гарантией производителя",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://uslugi161.ru/images/parts-icon.svg",
+          "width": "100",
+          "height": "100"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://uslugi161.ru/#warranty",
+        "name": "Гарантия до 12 месяцев",
+        "description": "+ Официальный чек",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://uslugi161.ru/images/warranty-icon.svg",
+          "width": "100",
+          "height": "100"
+        }
+      }
+    ]
+  }
+  </script>
+
   <!-- SEO -->
   <meta name="keywords"
     content="ремонт рольставней, ремонт рольворот, починить рольставни, Ростов-на-Дону, сервис рольставней, замена привода рольставней, неисправности рольворот">
@@ -311,6 +362,16 @@
   <meta property="og:title" content="Ремонт рольставней и ворот в Ростове-на-Дону">
   <meta property="og:description" content="Профессиональный ремонт рольставней и ворот">
   <meta property="og:type" content="website">
+
+  <!-- Предзагрузка иконок -->
+  <link rel="preload" href="https://uslugi161.ru/images/clock-icon.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="https://uslugi161.ru/images/parts-icon.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="https://uslugi161.ru/images/warranty-icon.svg" as="image" type="image/svg+xml">
+
+  <!-- OpenGraph для соцсетей (помогает Google) -->
+  <meta property="og:image" content="https://uslugi161.ru/images/clock-icon.svg">
+  <meta property="og:image:width" content="100">
+  <meta property="og:image:height" content="100">
 
   <!-- Основные стили -->
   <link rel="stylesheet" href="style.css" media="all">
@@ -401,7 +462,7 @@
         <div class="service-content" id="repair-roller-gates">
           <hr class="divider">
           <div class="service-title" href="#repair-roller-gates">
-            <h3>Ремонт рольворот</h3>
+            <h2>Ремонт рольворот</h2>
             <hr class="divider1">
           </div>
           <div class="service-text">
@@ -448,12 +509,12 @@
 
         <div class="additional-block" id="roller-gate-advice">
           <div class="additional-header">
-            <h4><strong>Ценные советы</strong> <span class="toggle-icon">+</span></h4>
+            <h3>Проблемы и решения</h3>
           </div>
           <div class="additional-content">
             <div class="content-wrapper">
               <div class="section1" id="gate-question-1">
-                <div class="problem-title">Рольворота не реагируют на команды с пульта</div>
+                <h4 class="problem-title">Рольворота не реагируют на команды с пульта</h4>
                 <p>Первым делом найдите <span class="bold-text">блок управления</span> – именно к
                   нему
                   <span class="bold-text">привязан</span> пульт. Проверьте, подается ли питание
@@ -468,7 +529,7 @@
               <hr class="divider1">
 
               <div class="section1" id="gate-question-2">
-                <div class="problem-title">Неполное открытие или закрытие рольворот</div>
+                <h4 class="problem-title">Неполное открытие или закрытие рольворот</h4>
                 <p>Сначала установите причину сбоя. Осмотрите полотно: нет ли деформированных <span
                     class="bold-text">ламелей</span> или проблем с <span class="bold-text">тяговыми
                     пружинами</span>. После этого можно регулировать <span class="bold-text">привод</span>. Если
@@ -480,7 +541,7 @@
               <hr class="divider">
 
               <div class="section1" id="gate-question-3">
-                <div class="problem-title">Полотно зашло внутрь короба</div>
+                <h4 class="problem-title">Полотно зашло внутрь короба</h4>
                 <p>Такое происходит из-за обледенения <span class="bold-text">ламелей</span> или
                   механического воздействия при аварийном открытии. Перед снятием короба убедитесь,
                   что полотно полностью накручено на вал, а он надежно закреплен. Используя <span
@@ -494,7 +555,7 @@
               <hr class="divider1">
 
               <div class="section1" id="gate-question-4">
-                <div class="problem-title">Двигатель шумит, но ворота не открываются</div>
+                <h4 class="problem-title">Двигатель шумит, но ворота не открываются</h4>
                 <p>Вероятная причина – полотно отсоединилось от вала или разошлись <span
                     class="bold-text">ламели</span>.
                   Сначала отсоедините <span class="bold-text">тяговые пружины</span>,
@@ -507,7 +568,7 @@
               <hr class="divider">
 
               <div class="section1" id="gate-question-5">
-                <div class="problem-title">Рольворота открываются или закрываются на перекос</div>
+                <h4 class="problem-title">Рольворота открываются или закрываются на перекос</h4>
                 <p>Скорее всего, вышел из строя подшипник вала, либо одна из <span class="bold-text">тяговых
                     пружин</span> не закреплена. Замените
                   поврежденные
@@ -517,7 +578,7 @@
               <div class="terminology-block">
                 <hr class="divider1">
                 <div class="section2">
-                  <div class="problem-title">Терминология:</div>
+                  <h4 class="problem-title">Терминология:</h4>
 
                   <div class="term-item" id="terminology-1">
                     <span class="bold-text">Блок управления</span> - электронная плата, которая управляет работой роллет
@@ -578,7 +639,7 @@
         <div class="service-content" id="roller-shutters-advice">
           <hr class="divider">
           <div class="service-title" href="#roller-shutters-advice">
-            <h3>Ремонт рольставней</h3>
+            <h2>Ремонт рольставней</h2>
             <hr class="divider1">
           </div>
           <div class="service-text">
@@ -629,12 +690,12 @@
 
         <div class="additional-block" id="roller-shutters-advice">
           <div class="additional-header">
-            <h4>Ценные советы<span class="toggle-icon">+</span></h4>
+            <h3>Проблемы и решения</h3>
           </div>
           <div class="additional-content">
             <div class="content-wrapper">
               <div class="section" id="shutters-question-1">
-                <div class="problem-title">Рольставни не реагируют на команды с пульта</div>
+                <h4 class="problem-title">Рольставни не реагируют на команды с пульта</h4>
                 <p>Сначала проверьте <span class="bold-text">блок управления</span> (обычно это
                   не
                   большая пластиковая коробка). Если у вас несколько пультов, протестируйте каждый
@@ -650,7 +711,7 @@
               <hr class="divider">
 
               <div class="section" id="shutters-question-2">
-                <div class="problem-title">Неполное открытие или закрытие рольставней</div>
+                <h4 class="problem-title">Неполное открытие или закрытие рольставней</h4>
                 <p>Перед регулировкой <span class="bold-text">привода</span> необходимо
                   определить
                   причину неисправности. Убедитесь, что на пути полотна нет препятствий. В
@@ -663,7 +724,7 @@
               <hr class="divider1">
 
               <div class="section" id="shutters-question-3">
-                <div class="problem-title">Полотно зашло в короб</div>
+                <h4 class="problem-title">Полотно зашло в короб</h4>
                 <p>При заклинивании аккуратно откройте короб и проверьте крепление вала к боковым
                   крышкам. <span class="bold-text">Ламели</span> следует осторожно направлять
                   вниз по
@@ -674,7 +735,7 @@
               <hr class="divider">
 
               <div class="section" id="shutters-question-4">
-                <div class="problem-title">Скрежет во время работы роллет</div>
+                <h4 class="problem-title">Скрежет во время работы роллет</h4>
                 <p>Откройте короб при закрытых <span class="bold-text">рольставнях</span> и
                   осмотрите
                   механизм. Чаще всего скрежет возникает из-за соскочивших <span class="bold-text">тяговых
@@ -691,7 +752,7 @@
               <hr class="divider1">
 
               <div class="section" id="shutters-question-5">
-                <div class="problem-title">Тугой ход рольставней</div>
+                <h4 class="problem-title">Тугой ход рольставней</h4>
                 <p>Проблема может быть в износе подшипника вала. В механических системах со временем
                   изнашивается <span class="bold-text">внутренняя пружина</span>. Еще одна
                   возможная
@@ -701,7 +762,7 @@
               <hr class="divider">
 
               <div class="section" id="shutters-question-6">
-                <div class="problem-title">Неисправность кордоукладчика</div>
+                <h4 class="problem-title">Неисправность кордоукладчика</h4>
                 <p>В большинстве случаев его придется заменить, но иногда возможен ремонт. Перед
                   заменой
                   убедитесь, что <span class="bold-text">направляющий ролик</span> на месте.
@@ -711,7 +772,7 @@
               <hr class="divider1">
 
               <div class="section" id="shutters-question-7">
-                <div class="problem-title">Обрыв шнура рольставней</div>
+                <h4 class="problem-title">Обрыв шнура рольставней</h4>
                 <p>Для <span class="bold-text">рольставней</span> требуется специальный <span
                     class="bold-text">шнур</span>. Чтобы рассчитать его длину, умножьте
                   высоту
@@ -719,7 +780,7 @@
               </div>
               <hr class="divider">
               <div class="section2">
-                <div class="problem-title">Терминология:</div>
+                <h4 class="problem-title">Терминология:</h4>
                 <p id="terminology-9"><span class="bold-text">Рольставни</span> - это рулонные защитные ставни,
                   состоящие из подвижных ламелей, которые сворачиваются в короб над проёмом.</p>
                 <p id="terminology-10"><span class="bold-text">Блок управления</span> - это электронная плата, которая
@@ -753,7 +814,7 @@
 <!-- Секция преимуществ -->
 <section id="advantages" class="advantages">
   <div class="main-sticker">
-    <h2>Почему выбирают нас?</h2>
+    <h3 class="section-title">Почему выбирают Ростов-Сервис?</h3>
     <div class="arrows">
       <span class="arrow-down">↓</span>
     </div>
@@ -761,22 +822,22 @@
   <div class="stickers-container">
     <div class="sticker fast-sticker">
       <div class="sticker-content">
-        <div class="main-text">Быстро</div>
-        <div class="hover-text">Выезд в течение часа</div>
+        <h4 class="main-text">Срочный выезд</h4>
+        <div class="hover-text">В течение 60 минут по Ростову-на-Дону</div>
       </div>
     </div>
 
     <div class="sticker quality-sticker">
       <div class="sticker-content">
-        <div class="main-text">Качественно</div>
-        <div class="hover-text">Оригинальные запчасти</div>
+        <h4 class="main-text">Оригинальные комплектующие</h4>
+        <div class="hover-text">Doorhan, Alutech, Nice с гарантией производителя</div>
       </div>
     </div>
 
     <div class="sticker guarantee-sticker">
       <div class="sticker-content">
-        <div class="main-text">Гарантированно</div>
-        <div class="hover-text">Предоставление чека</div>
+        <h4 class="main-text">Гарантия до 12 месяцев</h4>
+        <div class="hover-text">+ Официальный чек</div>
       </div>
     </div>
   </div>
