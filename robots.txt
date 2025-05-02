@@ -5,4 +5,4 @@ Disallow: /.git/
 Disallow: /.vscode/
 Disallow: /dist/
 
-# Sitemap: https://uslugi161.ru/sitemap.xml
+Sitemap: https://uslugi161.ru/sitemap.xml
