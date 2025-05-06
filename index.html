@@ -26,16 +26,21 @@
     (function (m, e, t, r, i, k, a) {
       m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
       m[i].l = 1 * new Date();
-      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-    })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1,
+        k.src = "/tag.js", // Локальный путь к файлу
+        a.parentNode.insertBefore(k, a)
+    })
+      (window, document, "script", "/tag.js", "ym");
 
     ym(101594561, "init", {
-      defer: true, // ← Уменьшает влияние на загрузку страницы
+      defer: true,
       clickmap: true,
       trackLinks: true,
       accurateTrackBounce: true,
       webvisor: true,
-      useCDN: true // ← Использует CDN для загрузки скриптов
+      settings: {
+        storage: "partitioned" // Для совместимости с Firefox
+      }
     });
   </script>
   <noscript>
