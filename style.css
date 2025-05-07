@@ -1342,6 +1342,7 @@ footer p.contact-info a:hover {
 
     footer p.contact-info {
         font-size: 14px;
+        margin: 5px 0;
     }
 
     footer p.contact-info a[href^="tel:"] {
@@ -1350,7 +1351,6 @@ footer p.contact-info a:hover {
 
     footer .copyright {
         font-size: 9px;
-        opacity: 0.8;
     }
 }
 
