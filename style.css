@@ -1026,7 +1026,7 @@ header .logo img {
 }
 
 .additional-block.active .additional-content {
-    max-height: 2000px;
+    max-height: 4000px;
 }
 
 .additional-block.active .toggle-icon {
@@ -1035,7 +1035,7 @@ header .logo img {
 
 @media (max-width: 768px) {
     .additional-block.active .additional-content {
-        max-height: 3500px;
+        max-height: 4000px;
     }
 
     .additional-header h4 {
