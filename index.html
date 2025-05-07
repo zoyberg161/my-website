@@ -417,9 +417,22 @@
     <!-- Кнопка меню -->
     <div class="menu-icon" id="menuButton">
       <a href="#" aria-label="Открыть меню">
-        <img src="images/menu.png" alt="Меню" class="menu-default">
-        <img src="images/menuN.png" alt="Меню (активное)" class="menu-hover">
+        <!-- Оптимизированная версия с WebP -->
+        <picture>
+          <!-- Стандартное состояние -->
+          <source srcset="images/menu.webp 1x, images/menu@2x.webp 2x" type="image/webp">
+          <img src="images/menu.png" alt="Меню" class="menu-default" width="24" height="24" loading="eager"
+            decoding="async">
+        </picture>
+
+        <!-- Активное состояние (hover) -->
+        <picture>
+          <source srcset="images/menuN.webp 1x, images/menuN@2x.webp 2x" type="image/webp">
+          <img src="images/menuN.png" alt="Меню (активное)" class="menu-hover" width="24" height="24" loading="eager"
+            decoding="async">
+        </picture>
       </a>
+
       <div class="dropdown-menu" id="dropdownMenu">
         <a href="#Remont-rolvorot-v-Rostove">Ремонт рольворот</a>
         <a href="#Remont-rolstavnej-v-Rostove">Ремонт рольставней</a>

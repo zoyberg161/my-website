@@ -122,25 +122,30 @@ function hideCallButton() {
 // Кнопка "Наверх"
 const scrollToTopButton = document.querySelector('.scroll-to-top');
 
-// Показать/скрыть кнопку при прокрутке
-window.addEventListener('scroll', function () {
-  const scrollPosition = window.scrollY;
-  const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+if (scrollToTopButton) {
+  window.addEventListener('scroll', function () {
+    const scrollPosition = window.scrollY;
+    const pageHeight =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollPercentage = scrollPosition / pageHeight;
 
-  if (scrollPosition > pageHeight * 0.7) {
-    scrollToTopButton.style.display = 'block';
-  } else {
-    scrollToTopButton.style.display = 'none';
-  }
-});
-
-// Обработка клика на кнопку "Наверх"
-scrollToTopButton.addEventListener('click', function () {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
+    // Показывать после 60% прокрутки с плавной анимацией
+    if (scrollPercentage > 0.6) {
+      scrollToTopButton.classList.add('visible');
+    } else {
+      scrollToTopButton.classList.remove('visible');
+    }
   });
-});
+
+  // Клик по кнопке
+  scrollToTopButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  });
+}
 
 // Управление навигацией на мобильных устройствах
 const menuIcon = document.querySelector('.menu-icon');
