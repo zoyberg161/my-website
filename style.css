@@ -1181,55 +1181,6 @@ footer::before {
     opacity: 1;
 }
 
-/* CSS с удаленным крестиком и новым позиционированием */
-.call-button {
-    position: fixed;
-    right: -50px;
-    /* Начальное положение за экраном */
-    top: 60vh;
-    /* 60% от высоты экрана */
-    transform: translateY(-50%);
-    background-color: #7790899c;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    transition: right 0.3s ease-in-out;
-    z-index: 1001;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.call-button.visible {
-    right: 13px;
-    /* Конечное положение */
-}
-
-.call-button .fa-phone {
-    color: white;
-    font-size: 24px;
-    transition: all 0.3s ease;
-    text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-}
-
-.call-button:hover .fa-phone {
-    color: #b9e600;
-    filter: drop-shadow(0 0 6px rgba(185, 230, 0, 0.8));
-    transform: scale(1.1);
-}
-
-@media (max-width: 480px) {
-    .call-button {
-        top: 60vh;
-        /* Сохраняем позицию на мобильных */
-    }
-}
-
 footer p.contact-info {
     font-size: 17px;
     font-weight: bold;
@@ -1301,10 +1252,60 @@ footer p.contact-info a:hover {
     }
 }
 
+/* Кнопка Позвонить */
+.call-button {
+    position: fixed;
+    right: 13px;
+    top: 40vh;
+    /* 40% от верха экрана */
+    transform: translateY(-50%);
+    background-color: #7790899c;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 1001;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+}
+
+.call-button.visible {
+    opacity: 1;
+}
+
+.call-button .fa-phone {
+    color: white;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.call-button:hover .fa-phone {
+    color: #b9e600;
+    filter: drop-shadow(0 0 6px rgba(185, 230, 0, 0.8));
+    transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+    .call-button {
+        top: 40vh;
+    }
+}
+
+/* Кнопка Наверх */
 .scroll-to-top {
     position: fixed;
-    bottom: 50px;
-    right: -100px;
+    bottom: 20vh;
+    /* 20% от низа экрана */
+    right: 13px;
+    /* Такое же расстояние от правого края, как у кнопки Позвонить */
     z-index: 1001;
     cursor: pointer;
     background-color: #7790899c;
@@ -1315,11 +1316,10 @@ footer p.contact-info a:hover {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: right 0.3s ease, opacity 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
 .scroll-to-top.visible {
-    right: 30px;
     opacity: 1;
 }
 
@@ -1353,9 +1353,8 @@ footer p.contact-info a:hover {
 
 @media (max-width: 768px) {
     .scroll-to-top {
-        bottom: 80px;
-        right: 21px;
-        transform: translateX(16px);
+        bottom: 20vh;
+        right: 13px;
     }
 }
 
