@@ -1342,7 +1342,7 @@ footer p.contact-info a:hover {
 
     footer p.contact-info {
         font-size: 14px;
-        margin: 3px 0;
+        margin: 4px 0;
         padding: 0;
     }
 
@@ -1351,7 +1351,7 @@ footer p.contact-info a:hover {
     }
 
     footer .copyright {
-        font-size: 5px;
+        font-size: 7px;
         margin-top: 8px;
     }
 }
