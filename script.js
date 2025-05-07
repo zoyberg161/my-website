@@ -93,34 +93,55 @@ if (form) {
 
 // Кнопка Позвонить
 let isTimeoutPassed = false;
-setTimeout(() => {
-  isTimeoutPassed = true;
-  checkScroll();
-}, 5000);
+let callButton = document.getElementById('callButton');
 
-function checkScroll() {
-  const callButton = document.getElementById('callButton');
-  const scrollPercentage =
-    (window.scrollY /
-      (document.documentElement.scrollHeight - window.innerHeight)) *
-    100;
+// Инициализация кнопки (если она существует)
+if (callButton) {
+  // Функция для проверки скролла
+  function checkScroll() {
+    const scrollPercentage =
+      (window.scrollY /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+      100;
 
-  if (isTimeoutPassed && scrollPercentage > 25) {
-    callButton.classList.add('visible');
-  } else {
-    callButton.classList.remove('visible');
-  }
-}
-
-window.addEventListener(
-  'scroll',
-  function () {
-    if (isTimeoutPassed) {
-      checkScroll();
+    if (isTimeoutPassed && scrollPercentage > 25) {
+      callButton.classList.add('visible');
+    } else {
+      callButton.classList.remove('visible');
     }
-  },
-  { passive: true }
-);
+  }
+
+  // Обработчик клика по кнопке
+  callButton.addEventListener('click', function () {
+    // Добавляем класс clicked при нажатии
+    this.classList.add('clicked');
+
+    // Здесь может быть ваш код для звонка
+    // Например: window.location.href = 'tel:+1234567890';
+
+    // Возвращаем в исходное состояние через 3 секунды
+    setTimeout(() => {
+      this.classList.remove('clicked');
+    }, 3000);
+  });
+
+  // Таймер для задержки появления кнопки
+  setTimeout(() => {
+    isTimeoutPassed = true;
+    checkScroll();
+  }, 5000);
+
+  // Обработчик скролла
+  window.addEventListener(
+    'scroll',
+    function () {
+      if (isTimeoutPassed) {
+        checkScroll();
+      }
+    },
+    { passive: true }
+  );
+}
 
 // Кнопка "Наверх"
 const scrollToTopButton = document.querySelector('.scroll-to-top');
