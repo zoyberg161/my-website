@@ -7,4 +7,4 @@ dist/
 # Но разрешить отслеживание SEO-файлов
 !/CNAME
 !/robots.txt
-!/sitemap.xml
+!https://uslugi161.ru/sitemap.xml
