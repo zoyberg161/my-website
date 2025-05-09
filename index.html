@@ -52,10 +52,14 @@
 
   <!-- Вопрос ответ и терминалогия -->
   <script type="application/ld+json">
-      {
+{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": "https://uslugi161.ru/#faq",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://uslugi161.ru/"
+  },
   "mainEntity": [
           {
             "@type": "Question",
@@ -300,14 +304,16 @@
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://uslugi161.ru/#service",
+  "mainEntityOfPage": "https://uslugi161.ru/",
   "name": "Ростов-Сервис - ремонт рольставен и рольворот",
   "image": "https://uslugi161.ru/images/logo.png",
   "telephone": "+79518264429",
   "priceRange": "$$",
-    "geo": {
+  "geo": {
     "@type": "GeoCoordinates",
-"latitude": 47.211533, 
-"longitude": 39.611985
+    "latitude": 47.211533,
+    "longitude": 39.611985
   },
   "address": {
     "@type": "PostalAddress",
@@ -338,48 +344,7 @@
     "ratingCount": "3",
     "reviewCount": "3",
     "url": "https://uslugi161.ru/#reviews"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": {"@type": "Person", "name": "Галина Янгирова"},
-      "datePublished": "2024-12-30",
-      "reviewBody": "Мастер быстро приехал, в течении 20 минут все отремонтировал, подробно обьяснил, в чем причина неисправности. Спасибо за вашу работу!!!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "url": "https://uslugi161.ru/#reviews"
-    },
-    {
-      "@type": "Review",
-      "author": {"@type": "Person", "name": "сергей степикин"},
-      "datePublished": "2024-12-27",
-      "reviewBody": "Очень грамотный, мастер и человек. Свое дело знает от и до. В течении двух часов нашел причину, купил на складе всё необходимое. Заменив мотор и электрику рулонных ворот - быстро и оперативно.",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "url": "https://uslugi161.ru/#reviews"
-    },
-    {
-      "@type": "Review",
-      "author": {"@type": "Person", "name": "Anne G."},
-      "datePublished": "2024-12-10",
-      "reviewBody": "Мастер Николай очень добросовестно выполнил свою работу, еще и гарантию дал! Очень благодарна ему за его труд! Минусов нет. Осталась очень довольна! Спасибо большое!",
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5",
-        "worstRating": "1"
-      },
-      "url": "https://uslugi161.ru/#reviews"
-    }
-  ]
+  }
 }
 </script>
 
