@@ -4,14 +4,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // 1. Обновление meta description
     const desc = {
       '#Remont-rolvorot-v-Rostove':
-        'Ремонт рольворот в Ростове-на-Дону — замена приводов, ремонт механизмов. Гарантия 12 месяцев!',
+        'Ремонт рольворот в Ростове-на-Дону — замена приводов, ремонт полотна. Гарантия до 12 месяцев!',
       '#Remont-rolstavnej-v-Rostove':
-        'Ремонт рольставней в Ростове — замена тяговых пружин, починка электроприводов. Выезд мастера за 60 минут.',
+        'Ремонт рольставней в Ростове — оконных и дверных моделей. Выезд мастера в течение часа.',
+      '#about':
+        'Ремонт рольворот и рольставней в Ростове-на-Дону. Опыт работы более 10 лет. Гарантия качества!',
     };
 
     const newDesc =
       desc[window.location.hash] ||
-      'Ремонт рольставней и рольворот в Ростове-на-Дону. Гарантия 12 месяцев!';
+      'Ремонт рольставней и рольворот в Ростове-на-Дону. Гарантия до 12 месяцев!';
     document
       .querySelector('meta[name="description"]')
       .setAttribute('content', newDesc);
@@ -23,13 +25,38 @@ document.addEventListener('DOMContentLoaded', function () {
     const targetElement = document.querySelector(hash);
     if (!targetElement) return;
 
-    // Находим ближайший блок для подсветки
-    let answerBlock =
+    // 3. Отправка в IndexNow для Bing
+    const indexNowUrls = [
+      '#Remont-rolvorot-v-Rostove',
+      '#Remont-rolstavnej-v-Rostove',
+      '#about',
+    ];
+    if (indexNowUrls.includes(hash)) {
+      const urlToSubmit = `https://uslugi161.ru/${encodeURIComponent(hash)}`;
+      const indexNowUrl = `https://www.bing.com/indexnow?url=${encodeURIComponent(
+        urlToSubmit
+      )}&key=a5bbdd78a47d4475a14e0607da722d9d`;
+
+      fetch(indexNowUrl)
+        .then(
+          (response) =>
+            response.ok && console.log('URL отправлен в IndexNow:', urlToSubmit)
+        )
+        .catch((error) => console.error('Ошибка отправки в IndexNow:', error));
+    }
+
+    // 4. Подсветка элемента
+    highlightElement(targetElement);
+  }
+
+  // Функция подсветки элементов
+  function highlightElement(targetElement) {
+    const answerBlock =
       targetElement.closest(
         '.section, .section1, .term-item, p, .problem-title'
       ) || targetElement;
 
-    // Проверяем, находится ли элемент в скрытом блоке
+    // Активация скрытых блоков
     const adviceBlock = answerBlock.closest('.additional-block');
     if (adviceBlock && !adviceBlock.classList.contains('active')) {
       adviceBlock.classList.add('active');
@@ -39,12 +66,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (toggleIcon) toggleIcon.textContent = '-';
     }
 
-    // Удаляем старую подсветку
+    // Удаление старой подсветки
     document
       .querySelectorAll('.highlighted-answer')
       .forEach((el) => el.classList.remove('highlighted-answer'));
 
-    // Подсвечиваем элемент
+    // Новая подсветка
     targetElement.classList.add('highlighted-answer');
     const problemTitle =
       targetElement.querySelector('.problem-title') ||
@@ -54,24 +81,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Плавная прокрутка
-    setTimeout(() => {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 300);
+    setTimeout(
+      () =>
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' }),
+      300
+    );
 
-    // Убираем подсветку через 8 секунд
+    // Снятие подсветки
     setTimeout(() => {
       targetElement.classList.remove('highlighted-answer');
       if (problemTitle) problemTitle.classList.remove('highlighted-answer');
     }, 8000);
   }
 
-  // Обработка якорных ссылок при загрузке страницы
-  handleHashChange();
-
-  // Обработка при изменении hash
+  // Инициализация обработчиков событий
+  window.addEventListener('load', handleHashChange);
   window.addEventListener('hashchange', handleHashChange);
 
-  // Модифицируем smooth scroll для ссылок
+  // Smooth scroll для якорных ссылок
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', function (event) {
       event.preventDefault();
@@ -85,7 +112,6 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
       const nameInput = form.querySelector('input[type="text"]');
       const phoneInput = form.querySelector('input[type="tel"]');
-
       if (nameInput.value.trim() === '' || phoneInput.value.trim() === '') {
         event.preventDefault();
         alert('Пожалуйста, заполните все поля!');
@@ -93,12 +119,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Кнопка Позвонить
+  // Кнопка "Позвонить"
   const callButton = document.getElementById('callButton');
   if (callButton) {
     let isTimeoutPassed = false;
-
-    function checkScroll() {
+    const checkScroll = () => {
       const scrollPercentage =
         (window.scrollY /
           (document.documentElement.scrollHeight - window.innerHeight)) *
@@ -107,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'visible',
         isTimeoutPassed && scrollPercentage > 25
       );
-    }
+    };
 
     callButton.addEventListener('click', function () {
       this.classList.add('clicked');
