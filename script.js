@@ -106,19 +106,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Валидация формы
-  const form = document.querySelector('form');
-  if (form) {
-    form.addEventListener('submit', function (event) {
-      const nameInput = form.querySelector('input[type="text"]');
-      const phoneInput = form.querySelector('input[type="tel"]');
-      if (nameInput.value.trim() === '' || phoneInput.value.trim() === '') {
-        event.preventDefault();
-        alert('Пожалуйста, заполните все поля!');
-      }
-    });
-  }
-
   // Кнопка "Позвонить"
   const callButton = document.getElementById('callButton');
   if (callButton) {
