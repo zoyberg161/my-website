@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
       targetElement.classList.remove('highlighted-answer');
       if (problemTitle) problemTitle.classList.remove('highlighted-answer');
-    }, 8000);
+    }, 1000);
   }
 
   // Инициализация обработчиков событий
