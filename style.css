@@ -424,6 +424,32 @@ header .logo img {
     padding: 30px 0;
 }
 
+/* Номер телефона в карточках */
+.service-phone {
+    text-align: right;
+    margin-left: auto;
+}
+
+.service-phone .phone-link {
+    text-decoration: none;
+    font-weight: bold;
+    color: #4f4f4f;
+    font-size: 22px;
+    transition: color 0.3s;
+}
+
+.service-phone .phone-link:hover {
+    color: #007bff;
+}
+
+@media (max-width: 768px) {
+    .service-phone {
+        text-align: center;
+        font-size: 18px;
+        margin-left: 0;
+    }
+}
+
 /* Раздиляющая анимированая полоса */
 .divider {
     border: 0;
