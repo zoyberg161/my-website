@@ -19,6 +19,10 @@ body {
     padding: 0 !important;
     width: 100% !important;
     overflow-x: hidden !important;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 body {

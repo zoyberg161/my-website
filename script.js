@@ -49,6 +49,22 @@ document.addEventListener('DOMContentLoaded', function () {
     highlightElement(targetElement);
   }
 
+  // Запрет копирование текста
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && (e.key === 'c' || e.key === 'C' || e.key === 'Insert')) {
+      e.preventDefault();
+      alert('Копирование запрещено!');
+    }
+  });
+
+  // Запрет копирование изображений
+  document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG') {
+      e.preventDefault();
+      alert('Сохранение изображений запрещено!');
+    }
+  });
+
   // Функция подсветки элементов
   function highlightElement(targetElement) {
     const answerBlock =
