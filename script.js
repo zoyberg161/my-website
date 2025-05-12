@@ -57,12 +57,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // Запрет копирование изображений
+  // Запрет пкм на изображений
   document.addEventListener('contextmenu', (e) => {
     if (e.target.tagName === 'IMG') {
       e.preventDefault();
       alert('Сохранение изображений запрещено!');
     }
+  });
+
+  // Запрет перетаскивания
+  document.querySelectorAll('img').forEach((img) => {
+    img.draggable = false;
+    img.ondragstart = () => false;
   });
 
   // Функция подсветки элементов
