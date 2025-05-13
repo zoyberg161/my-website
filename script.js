@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const scrollPercentage =
         window.scrollY /
         (document.documentElement.scrollHeight - window.innerHeight);
-      scrollToTopButton.classList.toggle('visible', scrollPercentage > 0.6);
+      scrollToTopButton.classList.toggle('visible', scrollPercentage > 0.2);
     });
 
     scrollToTopButton.addEventListener('click', (e) => {
@@ -179,18 +179,85 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Мобильное меню
-  const menuIcon = document.querySelector('.menu-icon');
-  const nav = document.querySelector('nav');
-  if (menuIcon && nav) {
-    menuIcon.addEventListener('click', () => nav.classList.toggle('active'));
+  //Мобильное меню
+  const menuButton = document.getElementById('menuButton');
+  const dropdownMenu = document.getElementById('dropdownMenu');
+  let menuOpen = false;
 
-    document.addEventListener('click', (event) => {
-      if (!nav.contains(event.target) && !menuIcon.contains(event.target)) {
-        nav.classList.remove('active');
-      }
+  // Закрытие всех подменю
+  function closeAllSubmenus() {
+    document.querySelectorAll('.mobile-submenu').forEach((sm) => {
+      sm.classList.remove('active');
     });
   }
+
+  // Открытие/закрытие главного меню
+  menuButton.addEventListener('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    menuOpen = !menuOpen;
+    dropdownMenu.classList.toggle('active', menuOpen);
+    if (!menuOpen) closeAllSubmenus();
+  });
+
+  // Обработчик для кнопок подменю
+  document.querySelectorAll('.mobile-submenu-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const submenu = this.closest('.mobile-submenu');
+      const isActive = submenu.classList.contains('active');
+
+      // Закрываем все другие подменю
+      document.querySelectorAll('.mobile-submenu').forEach((sm) => {
+        if (sm !== submenu) sm.classList.remove('active');
+      });
+
+      // Переключаем текущее подменю
+      submenu.classList.toggle('active', !isActive);
+
+      // Гарантируем открытое состояние меню
+      menuOpen = true;
+      dropdownMenu.classList.add('active');
+    });
+  });
+
+  // Обработчик для всех ссылок в меню
+  document.querySelectorAll('.dropdown-menu a[href^="#"]').forEach((link) => {
+    link.addEventListener('click', function (e) {
+      // Для ссылок в подменю - закрываем меню после небольшой задержки
+      if (this.closest('.mobile-submenu-items')) {
+        setTimeout(() => {
+          menuOpen = false;
+          dropdownMenu.classList.remove('active');
+          closeAllSubmenus();
+        }, 100);
+      }
+      // Для обычных ссылок - закрываем сразу
+      else {
+        menuOpen = false;
+        dropdownMenu.classList.remove('active');
+        closeAllSubmenus();
+      }
+    });
+  });
+
+  // Закрытие при клике вне меню
+  document.addEventListener('click', function (e) {
+    if (!dropdownMenu.contains(e.target) && !menuButton.contains(e.target)) {
+      menuOpen = false;
+      dropdownMenu.classList.remove('active');
+      closeAllSubmenus();
+    }
+  });
+
+  // Дополнительная защита от закрытия при клике на тоггл
+  document.querySelectorAll('.mobile-submenu-toggle').forEach((toggle) => {
+    toggle.addEventListener('click', function (e) {
+      e.stopImmediatePropagation();
+    });
+  });
 
   // Подсказки
   document.querySelectorAll('.tooltip').forEach((tooltip) => {
@@ -398,8 +465,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Меню с выпадающим списком
-  const menuButton = document.getElementById('menuButton');
-  const dropdownMenu = document.getElementById('dropdownMenu');
+  const desktopButton = document.getElementById('desktopMenuButton');
+  const desktopDropdown = document.getElementById('desktopDropdownMenu');
   if (menuButton && dropdownMenu) {
     menuButton.addEventListener('click', function (e) {
       e.preventDefault();

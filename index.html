@@ -641,19 +641,6 @@
 <header>
 
   <!-- Шапка -->
-  <!-- Кнопка меню -->
-  <div class="menu-icon" id="menuButton">
-    <a href="#" aria-label="Открыть меню">
-      <img src="images/menu.png" alt="Меню" class="menu-default">
-      <img src="images/menuN.png" alt="Меню (активное)" class="menu-hover">
-    </a>
-    <div class="dropdown-menu" id="dropdownMenu">
-      <a href="#Remont-rolvorot-v-Rostove">Ремонт рольворот</a>
-      <a href="#Remont-rolstavnej-v-Rostove">Ремонт рольставней</a>
-      <a href="#reviews">Отзывы</a>
-      <a href="#footer-contact">Контакты</a>
-    </div>
-  </div>
 
   <!-- Логотип -->
   <div class="logo">
@@ -678,9 +665,81 @@
     </p>
   </div>
 
+  <!-- Кнопка меню -->
+  <div class="menu-icon" id="menuButton">
+    <a href="#" aria-label="Открыть меню">
+      <img src="images/menu.png" alt="Меню" class="menu-default">
+      <img src="images/menuN.png" alt="Меню (активное)" class="menu-hover">
+    </a>
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="#Remont-rolvorot-v-Rostove">Ремонт рольворот</a>
+
+      <div class="mobile-submenu">
+        <button class="mobile-submenu-toggle">Поломки рольворот <span class="arrow">▼</span></button>
+        <div class="mobile-submenu-items">
+          <a href="#Rolvorota-ne-reagiruyut-na-pult">Не реагируют на пульт</a>
+          <a href="#Rolvorota-ne-polnostyu-otkryvayutsya">Неполное открытие</a>
+          <a href="#Polotno-zashlo-v-korob">Полотно зашло в короб</a>
+          <a href="#Dvigatel-shumit-no-vorota-ne-rabotayut">Не открываются</a>
+          <a href="#Rolvorota-otkryvayutsya-na-perekos">Перекос</a>
+        </div>
+      </div>
+
+      <a href="#Remont-rolstavnej-v-Rostove">Ремонт рольставней</a>
+
+      <div class="mobile-submenu">
+        <button class="mobile-submenu-toggle">Поломки рольставней <span class="arrow">▼</span></button>
+        <div class="mobile-submenu-items">
+          <a href="#Rolstavni-ne-reagiruyut-na-pult">Не реагируют на пульт</a>
+          <a href="#Rolstavni-ne-polnostyu-otkryvayutsya">Неполное открытие</a>
+          <a href="#Polotno-zastryalo-v-korobe">Полотно застряло в коробе</a>
+          <a href="#Skrejet-pri-rabote-rolstavnej">Скрежет роллет</a>
+          <a href="#Tugoj-hod-rolstavnej">Тугой ход рольставней</a>
+          <a href="#Remont-kordoukladchika">Неисправность кордоукладчика</a>
+          <a href="#Zamena-shnura-rolstavnej">Обрыв шнура</a>
+        </div>
+      </div>
+
+      <a href="#reviews">Отзывы</a>
+      <a href="#footer-contact">Контакты</a>
+    </div>
+  </div>
+
 </header>
 
-
+<!-- Горизонтальное меню (только для десктопа) -->
+<div class="sticky-wrapper">
+  <div class="desktop-menu-container">
+    <nav class="desktop-menu">
+      <ul>
+        <li>
+          <a href="#polomki-rolvorot">Поломки рольворот</a>
+          <ul class="submenu">
+            <li><a href="#Rolvorota-ne-reagiruyut-na-pult">Не реагируют на пульт</a></li>
+            <li><a href="#Rolvorota-ne-polnostyu-otkryvayutsya">Неполное открытие</a></li>
+            <li><a href="#Polotno-zashlo-v-korob">Полотно зашло в короб</a></li>
+            <li><a href="#Dvigatel-shumit-no-vorota-ne-rabotayut">Не открываются</a></li>
+            <li><a href="#Rolvorota-otkryvayutsya-na-perekos">Перекос</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#polomki-rolstavnej">Поломки рольставней</a>
+          <ul class="submenu">
+            <li><a href="#Rolstavni-ne-reagiruyut-na-pult">Не реагируют на пульт</a></li>
+            <li><a href="#Rolstavni-ne-polnostyu-otkryvayutsya">Неполное открытие</a></li>
+            <li><a href="#Polotno-zastryalo-v-korobe">Полотно застряло в коробе</a></li>
+            <li><a href="#Skrejet-pri-rabote-rolstavnej">Скрежет роллет</a></li>
+            <li><a href="#Tugoj-hod-rolstavnej">Тугой ход рольставней</a></li>
+            <li><a href="#Remont-kordoukladchika">Неисправность кордоукладчика</a></li>
+            <li><a href="#Zamena-shnura-rolstavnej">Обрыв шнура</a></li>
+          </ul>
+        </li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#footer-contact">Контакты</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
 
 <div class="main-content-container">
 
@@ -764,7 +823,7 @@
       </div>
 
       <div class="additional-block" id="roller-gate-advice">
-        <div class="additional-header">
+        <div class="additional-header" id="polomki-rolvorot">
           <h3>Проблемы и решения</h3>
         </div>
         <div class="additional-content">
@@ -950,7 +1009,7 @@
       </div>
 
       <div class="additional-block" id="roller-shutters-advice">
-        <div class="additional-header">
+        <div class="additional-header" id="polomki-rolstavnej">
           <h3>Проблемы и решения</h3>
         </div>
         <div class="additional-content">
@@ -985,7 +1044,7 @@
             <hr class="divider1">
 
             <div class="section" id="Polotno-zastryalo-v-korobe">
-              <h4 class="problem-title">Полотно зашло в короб</h4>
+              <h4 class="problem-title">Полотно застряло в коробе</h4>
               <p>При заклинивании аккуратно откройте короб и проверьте крепление вала к боковым
                 крышкам. <span class="bold-text">Ламели</span> следует осторожно направлять
                 вниз по
