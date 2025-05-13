@@ -1677,7 +1677,7 @@ footer p.contact-info a:hover {
         position: fixed;
         top: 15px;
         left: 20px;
-        z-index: 1000;
+        z-index: 1001;
         cursor: pointer;
         width: 50px;
         height: 50px;
@@ -1771,9 +1771,21 @@ footer p.contact-info a:hover {
 
     .mobile-submenu-items a {
         display: block;
-        padding: 8px 15px 8px 25px;
+        padding: 10px 15px 10px 30px;
+        /* Увеличено расстояние слева */
         position: relative;
-        z-index: 1;
+        z-index: 2;
+        /* Повышен z-index */
+        margin: 2px 0;
+        /* Добавлены отступы */
+        background-color: rgba(0, 0, 0, 0.1);
+        /* Легкий фон для лучшей видимости */
+        transition: background-color 0.2s;
+    }
+
+    .mobile-submenu-items a:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        /* Эффект при наведении */
     }
 
     .mobile-submenu.active .mobile-submenu-items {

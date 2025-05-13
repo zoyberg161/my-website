@@ -200,22 +200,21 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!menuOpen) closeAllSubmenus();
   });
 
-  // Обработчик для кнопок подменю
+  // Заменяем только обработчик для кнопок подменю
   document.querySelectorAll('.mobile-submenu-toggle').forEach((toggle) => {
     toggle.addEventListener('click', function (e) {
       e.preventDefault();
       e.stopPropagation();
 
       const submenu = this.closest('.mobile-submenu');
-      const isActive = submenu.classList.contains('active');
 
-      // Закрываем все другие подменю
+      // Закрываем только другие подменю
       document.querySelectorAll('.mobile-submenu').forEach((sm) => {
         if (sm !== submenu) sm.classList.remove('active');
       });
 
-      // Переключаем текущее подменю
-      submenu.classList.toggle('active', !isActive);
+      // Всегда переключаем текущее подменю
+      submenu.classList.toggle('active');
 
       // Гарантируем открытое состояние меню
       menuOpen = true;
@@ -223,23 +222,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Обработчик для всех ссылок в меню
-  document.querySelectorAll('.dropdown-menu a[href^="#"]').forEach((link) => {
+  // Добавляем отдельный обработчик для ссылок в подменю
+  document.querySelectorAll('.mobile-submenu-items a').forEach((link) => {
     link.addEventListener('click', function (e) {
-      // Для ссылок в подменю - закрываем меню после небольшой задержки
-      if (this.closest('.mobile-submenu-items')) {
-        setTimeout(() => {
-          menuOpen = false;
-          dropdownMenu.classList.remove('active');
-          closeAllSubmenus();
-        }, 100);
-      }
-      // Для обычных ссылок - закрываем сразу
-      else {
+      // Закрываем меню после микро-задержки
+      setTimeout(() => {
         menuOpen = false;
         dropdownMenu.classList.remove('active');
         closeAllSubmenus();
-      }
+      }, 10); // Минимальная задержка
     });
   });
 
