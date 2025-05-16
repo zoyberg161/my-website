@@ -268,9 +268,7 @@ header .logo img {
     position: relative;
     z-index: 1000;
     height: 60px;
-    /* Высота меню */
     margin-top: 20px;
-    /* Отступ от шапки */
 }
 
 /* Основные стили меню */
@@ -278,12 +276,10 @@ header .logo img {
     width: 100%;
     background-color: #83d3bcb5;
     padding: 10px 0;
-
+    font-family: 'Roboto', sans-serif;
     z-index: 1000;
     position: sticky;
     top: 0;
-    /* Будет прилипать к верху viewport */
-
 }
 
 /* Контейнер для правильного позиционирования */
@@ -315,12 +311,15 @@ header .logo img {
     transition: background-color 0.3s ease;
     border-radius: 4px;
     display: block;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 0.8;
+    font-weight: 700;
+    font-style: italic;
 }
 
 .desktop-menu>ul>li>a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #e3f7f1f1;
+    font-weight: 700;
 }
 
 /* Подменю */
@@ -330,12 +329,13 @@ header .logo img {
     top: 100%;
     left: 0;
     background-color: #74dfbdf1;
-    border-radius: 4px;
+    border-radius: 6px;
     padding: 4px 0;
     min-width: auto;
     width: max-content;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    font-weight: 500;
 }
 
 .desktop-menu li:hover .submenu {
@@ -357,7 +357,9 @@ header .logo img {
 }
 
 .desktop-menu .submenu a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #e3f7f1f1;
+    font-weight: 700;
+    border-radius: 4px;
 }
 
 /* Десктопная версия */
@@ -1615,7 +1617,8 @@ footer p.contact-info a:hover {
     height: 50px;
     border-radius: 8px;
     transition: background-color 0.3s ease;
-    background-color: #83d3bcb5;
+    background-color: #74dfbdf1;
+    font-weight: 500;
 }
 
 .menu-icon img.menu-default {
@@ -1668,6 +1671,7 @@ footer p.contact-info a:hover {
 
 .dropdown-menu a:hover {
     background-color: rgba(255, 255, 255, 0.1);
+    font-weight: 500;
 }
 
 /* Ваши стили с минимальными добавлениями */
@@ -1721,10 +1725,10 @@ footer p.contact-info a:hover {
         min-width: 250px;
         width: auto;
         background-color: #83d3bcf2;
-        border-radius: 8px;
+        border-radius: 6px;
         padding: 10px 0;
         margin-top: 5px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px #b6ebd9;
         white-space: nowrap;
         z-index: 1001;
     }
@@ -1743,7 +1747,8 @@ footer p.contact-info a:hover {
     }
 
     .dropdown-menu a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: #b6ebd9;
+        border-radius: 4px;
     }
 
     .mobile-submenu-items {
@@ -1764,28 +1769,21 @@ footer p.contact-info a:hover {
         background: #9bbdb1;
     }
 
-    .mobile-submenu-items::-webkit-scrollbar-thumb {
-        background: #3b3b3bf3;
-        border-radius: 3px;
-    }
+
 
     .mobile-submenu-items a {
         display: block;
         padding: 10px 15px 10px 30px;
-        /* Увеличено расстояние слева */
         position: relative;
         z-index: 2;
-        /* Повышен z-index */
         margin: 2px 0;
-        /* Добавлены отступы */
         background-color: rgba(0, 0, 0, 0.1);
-        /* Легкий фон для лучшей видимости */
         transition: background-color 0.2s;
     }
 
     .mobile-submenu-items a:hover {
-        background-color: rgba(0, 0, 0, 0.2);
-        /* Эффект при наведении */
+        background-color: #b6ebd9;
+        border-radius: 4px;
     }
 
     .mobile-submenu.active .mobile-submenu-items {
@@ -1804,6 +1802,7 @@ footer p.contact-info a:hover {
         font-family: inherit;
         font-size: inherit;
         position: relative;
+        font-weight: 600;
     }
 
     .mobile-submenu-toggle .arrow {
