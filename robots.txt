@@ -4,5 +4,18 @@ Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /.vscode/
 Disallow: /dist/
+Disallow: /page/kontakty
+Disallow: /collection/frontpage
+Disallow: /product/zamena-dvernyh-dovodchikov
+Disallow: /product/remont-i-ustanovka-vytyazhek
+Disallow: /product/ustanovka-televizora-na-stenu
+Disallow: /product/remont-i-ustanovka-antenn
+Disallow: /product/remont-pilesosov
+Disallow: /product/ustanovka-i-remont-sputnikovih-antenn
+Disallow: /product/ustanovka-dvernyh-dovodchikov
+Disallow: /product/zamena-dvernih-zamkov
+Disallow: /product/remont-mikrovolnovok
+Disallow: /product/remont-i-to-sektsionnyh-vorot
+Disallow: /product/montazh-kornizov-dlya-shtor
 
 Sitemap: https://uslugi161.ru/sitemap.xml
