@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /product/remont-rolvorot
+Allow: /product/remont-rolstaven
+
 Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /.vscode/
