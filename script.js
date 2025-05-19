@@ -3,10 +3,6 @@ document.addEventListener('DOMContentLoaded', function () {
   function handleHashChange() {
     // 1. Обновление meta description
     const desc = {
-      '#Remont-rolvorot-v-Rostove':
-        'Ремонт рольворот в Ростове-на-Дону — замена приводов, ремонт полотна. Гарантия до 12 месяцев!',
-      '#Remont-rolstavnej-v-Rostove':
-        'Ремонт рольставней в Ростове — оконных и дверных моделей. Выезд мастера в течение часа.',
       '#about':
         'Ремонт рольворот и рольставней в Ростове-на-Дону. Опыт работы более 10 лет. Гарантия качества!',
     };
@@ -26,11 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!targetElement) return;
 
     // 3. Отправка в IndexNow для Bing
-    const indexNowUrls = [
-      '#Remont-rolvorot-v-Rostove',
-      '#Remont-rolstavnej-v-Rostove',
-      '#about',
-    ];
+    const indexNowUrls = ['#about'];
     if (indexNowUrls.includes(hash)) {
       const urlToSubmit = `https://uslugi161.ru/${encodeURIComponent(hash)}`;
       const indexNowUrl = `https://www.bing.com/indexnow?url=${encodeURIComponent(
