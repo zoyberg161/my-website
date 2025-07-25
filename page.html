@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termux: Полная шпаргалка</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f4f4f8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            padding: 6px;
+            /* Уменьшено на ~70% */
+            line-height: 1.5;
+        }
+
+        .frame {
+            border: 4px solid #5dc93c;
+            border-radius: 12px;
+            padding: 12px;
+            /* Уменьшено */
+            background-color: #ffffff;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            max-width: 100%;
+            width: 100%;
+            margin: 6px auto;
+            /* Уменьшено */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 12px;
+            /* Уменьшено */
+            font-size: 1.8em;
+            /* Можно уменьшить для компактности */
+            color: #0c0c0c;
+        }
+
+        .section {
+            margin-bottom: 12px;
+            /* Уменьшено */
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #000000;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #c6e8c6;
+            padding-bottom: 4px;
+        }
+
+        .command-container {
+            display: flex;
+            align-items: center;
+            background-color: #e6f7e6;
+            border: 1px solid #c6e8c6;
+            border-radius: 6px;
+            padding: 6px 8px;
+            /* Уменьшено */
+            margin-bottom: 6px;
+            /* Уменьшено */
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            /* Уменьшено */
+            font-weight: bold;
+            color: #23c546;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .command-container:hover {
+            background-color: #d4f0d4;
+        }
+
+        .command {
+            flex-grow: 1;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #12eff3;
+            font-size: 1.4em;
+            margin-left: 8px;
+            padding: 0 4px;
+            transition: transform 0.2s, color 0.2s;
+        }
+
+        .copy-btn:hover {
+            color: #e622ab;
+            transform: scale(1.1);
+        }
+
+        .description {
+            font-size: 0.85em;
+            color: #444;
+            margin-bottom: 6px;
+        }
+
+        .example {
+            font-size: 0.8em;
+            color: #555;
+            margin: 4px 0 8px 8px;
+            padding-left: 8px;
+            border-left: 2px solid #a8d5a2;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        @media (min-width: 1200px) {
+            body {
+                padding: 12px;
+            }
+
+            .frame {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <h1>📚 Termux: Полная шпаргалка</h1>
+
+        <!-- Управление пакетами -->
+        <div class="section">
+            <div class="section-title">📦 Управление пакетами</div>
+            <div class="command-container" onclick="copyToClipboard('pkg update && pkg upgrade')">
+                <div class="command">pkg update && pkg upgrade</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('pkg update && pkg upgrade')">★</button>
+            </div>
+            <div class="description">Обновить список пакетов и установить обновления</div>
+            <div class="example">Пример: После установки Termux — всегда запускай эту команду.</div>
+
+            <div class="command-container" onclick="copyToClipboard('pkg install nano')">
+                <div class="command">pkg install nano</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('pkg install nano')">★</button>
+            </div>
+            <div class="description">Установить пакет (например, редактор nano)</div>
+            <div class="example">Пример: <code>pkg install python git curl</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('pkg uninstall nano')">
+                <div class="command">pkg uninstall nano</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('pkg uninstall nano')">★</button>
+            </div>
+            <div class="description">Удалить пакет</div>
+            <div class="example">Пример: <code>pkg uninstall python</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('pkg list-all')">
+                <div class="command">pkg list-all</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('pkg list-all')">★</button>
+            </div>
+            <div class="description">Показать все доступные пакеты</div>
+            <div class="example">Пример: <code>pkg list-all | grep python</code> — найти Python-пакеты</div>
+
+            <div class="command-container" onclick="copyToClipboard('pkg search wget')">
+                <div class="command">pkg search wget</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('pkg search wget')">★</button>
+            </div>
+            <div class="description">Поиск пакета по названию</div>
+            <div class="example">Пример: <code>pkg search ssh</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('pkg show python')">
+                <div class="command">pkg show python</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('pkg show python')">★</button>
+            </div>
+            <div class="description">Показать информацию о пакете</div>
+            <div class="example">Пример: <code>pkg show git</code></div>
+        </div>
+
+        <!-- Навигация по файлам -->
+        <div class="section">
+            <div class="section-title">🧭 Навигация по файлам</div>
+            <div class="command-container" onclick="copyToClipboard('ls')">
+                <div class="command">ls</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('ls')">★</button>
+            </div>
+            <div class="description">Показать содержимое текущей папки</div>
+            <div class="example">Пример: <code>ls -la</code> — с скрытыми файлами и деталями</div>
+
+            <div class="command-container" onclick="copyToClipboard('cd ~/storage/shared/Download')">
+                <div class="command">cd ~/storage/shared/Download</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('cd ~/storage/shared/Download')">★</button>
+            </div>
+            <div class="description">Перейти в папку (например, Загрузки)</div>
+            <div class="example">Пример: <code>cd ~</code> — в домашнюю папку</div>
+
+            <div class="command-container" onclick="copyToClipboard('cd ..')">
+                <div class="command">cd ..</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('cd ..')">★</button>
+            </div>
+            <div class="description">Вернуться на уровень выше</div>
+            <div class="example">Пример: Из папки `Scripts` → в `home`</div>
+
+            <div class="command-container" onclick="copyToClipboard('pwd')">
+                <div class="command">pwd</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('pwd')">★</button>
+            </div>
+            <div class="description">Показать текущий путь</div>
+            <div class="example">Пример: <code>/data/data/com.termux/files/home</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('tree -L 2')">
+                <div class="command">tree -L 2</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('tree -L 2')">★</button>
+            </div>
+            <div class="description">Показать дерево каталогов (до 2 уровней)</div>
+            <div class="example">Пример: <code>tree ~</code> — структура папок</div>
+        </div>
+
+        <!-- Работа с файлами -->
+        <div class="section">
+            <div class="section-title">📁 Работа с файлами</div>
+            <div class="command-container" onclick="copyToClipboard('cp file.txt backup/')">
+                <div class="command">cp file.txt backup/</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('cp file.txt backup/')">★</button>
+            </div>
+            <div class="description">Скопировать файл</div>
+            <div class="example">Пример: <code>cp ~/qwen.sh ~/scripts/</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('mv old.sh new.sh')">
+                <div class="command">mv old.sh new.sh</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('mv old.sh new.sh')">★</button>
+            </div>
+            <div class="description">Переименовать или переместить файл</div>
+            <div class="example">Пример: <code>mv ~/Download/app.py ~</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('rm file.txt')">
+                <div class="command">rm file.txt</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('rm file.txt')">★</button>
+            </div>
+            <div class="description">Удалить файл</div>
+            <div class="example">Пример: <code>rm ~/temp.log</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('mkdir scripts')">
+                <div class="command">mkdir scripts</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('mkdir scripts')">★</button>
+            </div>
+            <div class="description">Создать папку</div>
+            <div class="example">Пример: <code>mkdir ~/projects ~/backups</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('touch script.sh')">
+                <div class="command">touch script.sh</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('touch script.sh')">★</button>
+            </div>
+            <div class="description">Создать пустой файл</div>
+            <div class="example">Пример: <code>touch ~/notes.txt</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('rm -r folder/')">
+                <div class="command">rm -r folder/</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('rm -r folder/')">★</button>
+            </div>
+            <div class="description">Удалить папку и её содержимое</div>
+            <div class="example">Пример: <code>rm -rf ~/old_project</code> — осторожно!</div>
+        </div>
+
+        <!-- Работа с текстом -->
+        <div class="section">
+            <div class="section-title">📝 Работа с текстом</div>
+            <div class="command-container" onclick="copyToClipboard('nano script.py')">
+                <div class="command">nano script.py</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('nano script.py')">★</button>
+            </div>
+            <div class="description">Открыть файл в редакторе</div>
+            <div class="example">Пример: <code>nano ~/.bashrc</code> — настройка Termux</div>
+
+            <div class="command-container" onclick="copyToClipboard('cat file.txt')">
+                <div class="command">cat file.txt</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('cat file.txt')">★</button>
+            </div>
+            <div class="description">Показать содержимое файла</div>
+            <div class="example">Пример: <code>cat ~/qwen.sh</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('echo \" Hello\"> hello.txt')">
+                <div class="command">echo "Hello" > hello.txt</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('echo \" Hello\">
+                    hello.txt')">★</button>
+            </div>
+            <div class="description">Записать текст в файл (перезапись)</div>
+            <div class="example">Пример: <code>echo \"PATH=...\" >> ~/.bashrc</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('grep \" error\" log.txt')">
+                <div class="command">grep "error" log.txt</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('grep \" error\"
+                    log.txt')">★</button>
+            </div>
+            <div class="description">Найти строку в файле</div>
+            <div class="example">Пример: <code>grep -i \"fail\" *.log</code> — без учёта регистра</div>
+
+            <div class="command-container" onclick="copyToClipboard('head -n 10 file.txt')">
+                <div class="command">head -n 10 file.txt</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('head -n 10 file.txt')">★</button>
+            </div>
+            <div class="description">Показать первые 10 строк файла</div>
+            <div class="example">Пример: <code>head -20 ~/access.log</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('tail -f log.txt')">
+                <div class="command">tail -f log.txt</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('tail -f log.txt')">★</button>
+            </div>
+            <div class="description">Следить за изменениями в файле в реальном времени</div>
+            <div class="example">Пример: <code>tail -f /var/log/system.log</code></div>
+        </div>
+
+        <!-- Сеть и Git -->
+        <div class="section">
+            <div class="section-title">🌐 Сеть и Git</div>
+            <div class="command-container" onclick="copyToClipboard('termux-setup-storage')">
+                <div class="command">termux-setup-storage</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('termux-setup-storage')">★</button>
+            </div>
+            <div class="description">Разрешить доступ к памяти телефона</div>
+            <div class="example">Пример: Выполни один раз после установки Termux</div>
+
+            <div class="command-container" onclick="copyToClipboard('git clone https://github.com/user/repo.git')">
+                <div class="command">git clone https://github.com/user/repo.git</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('git clone https://github.com/user/repo.git')">★</button>
+            </div>
+            <div class="description">Скачать репозиторий с GitHub</div>
+            <div class="example">Пример: <code>git clone https://github.com/datawhalechina/leeml-notebook.git</code>
+            </div>
+
+            <div class="command-container" onclick="copyToClipboard('python -m http.server 8080')">
+                <div class="command">python -m http.server 8080</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('python -m http.server 8080')">★</button>
+            </div>
+            <div class="description">Запустить локальный веб-сервер</div>
+            <div class="example">Пример: Открой в браузере: <code>http://localhost:8080</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('curl ifconfig.me')">
+                <div class="command">curl ifconfig.me</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('curl ifconfig.me')">★</button>
+            </div>
+            <div class="description">Показать внешний IP-адрес</div>
+            <div class="example">Пример: <code>curl ipinfo.io</code> — подробная информация</div>
+
+            <div class="command-container" onclick="copyToClipboard('ping google.com')">
+                <div class="command">ping google.com</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('ping google.com')">★</button>
+            </div>
+            <div class="description">Проверить подключение к сайту</div>
+            <div class="example">Пример: <code>ping -c 4 ya.ru</code> — 4 пакета</div>
+
+            <div class="command-container" onclick="copyToClipboard('ssh user@host -p 22')">
+                <div class="command">ssh user@host -p 22</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('ssh user@host -p 22')">★</button>
+            </div>
+            <div class="description">Подключиться по SSH</div>
+            <div class="example">Пример: <code>ssh root@192.168.1.100</code></div>
+        </div>
+
+        <!-- Системные команды -->
+        <div class="section">
+            <div class="section-title">⚙️ Системные команды</div>
+            <div class="command-container" onclick="copyToClipboard('clear')">
+                <div class="command">clear</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('clear')">★</button>
+            </div>
+            <div class="description">Очистить экран терминала</div>
+            <div class="example">Пример: После долгой работы — чистим экран</div>
+
+            <div class="command-container" onclick="copyToClipboard('exit')">
+                <div class="command">exit</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('exit')">★</button>
+            </div>
+            <div class="description">Выйти из Termux</div>
+            <div class="example">Пример: Закрыть сессию</div>
+
+            <div class="command-container" onclick="copyToClipboard('find ~/storage/shared -name \" *.sh\"')">
+                <div class="command">find ~/storage/shared -name "*.sh"</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('find ~/storage/shared -name \"
+                    *.sh\"')">★</button>
+            </div>
+            <div class="description">Найти файлы по имени или расширению</div>
+            <div class="example">Пример: <code>find ~ -type f -name "config*"</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('du -sh *')">
+                <div class="command">du -sh *</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('du -sh *')">★</button>
+            </div>
+            <div class="description">Показать размер файлов и папок</div>
+            <div class="example">Пример: <code>du -h ~/downloads/</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('df -h')">
+                <div class="command">df -h</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('df -h')">★</button>
+            </div>
+            <div class="description">Показать использование диска</div>
+            <div class="example">Пример: Свободное место на устройстве</div>
+
+            <div class="command-container" onclick="copyToClipboard('ps aux')">
+                <div class="command">ps aux</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('ps aux')">★</button>
+            </div>
+            <div class="description">Показать запущенные процессы</div>
+            <div class="example">Пример: <code>ps | grep python</code> — найти Python-процессы</div>
+
+            <div class="command-container" onclick="copyToClipboard('chmod +x script.sh')">
+                <div class="command">chmod +x script.sh</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('chmod +x script.sh')">★</button>
+            </div>
+            <div class="description">Сделать файл исполняемым</div>
+            <div class="example">Пример: Перед запуском <code>./script.sh</code></div>
+        </div>
+
+        <!-- Дополнительные инструменты -->
+        <div class="section">
+            <div class="section-title">🔧 Дополнительные инструменты</div>
+            <div class="command-container" onclick="copyToClipboard('pkg install proot-distro')">
+                <div class="command">pkg install proot-distro</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('pkg install proot-distro')">★</button>
+            </div>
+            <div class="description">Установить PRoot — запуск Linux-дистрибутивов</div>
+            <div class="example">Пример: <code>proot-distro install ubuntu</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('termux-info')">
+                <div class="command">termux-info</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('termux-info')">★</button>
+            </div>
+            <div class="description">Показать информацию о Termux и системе</div>
+            <div class="example">Пример: Версия, путь, среда</div>
+
+            <div class="command-container" onclick="copyToClipboard('which python')">
+                <div class="command">which python</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('which python')">★</button>
+            </div>
+            <div class="description">Найти путь к исполняемому файлу</div>
+            <div class="example">Пример: <code>which git</code></div>
+
+            <div class="command-container" onclick="copyToClipboard('history')">
+                <div class="command">history</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('history')">★</button>
+            </div>
+            <div class="description">Показать историю введённых команд</div>
+            <div class="example">Пример: Поиск ранее введённой команды</div>
+
+            <div class="command-container" onclick="copyToClipboard('man ls')">
+                <div class="command">man ls</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('man ls')">★</button>
+            </div>
+            <div class="description">Показать руководство по команде</div>
+            <div class="example">Пример: <code>man grep</code> — подробная справка</div>
+        </div>
+    </div>
+    <footer>
+        Создано в Termux | Поддержка русского языка и копирования
+    </footer>
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('✅ Скопировано:\n' + text);
+            }).catch(err => {
+                console.error('Ошибка копирования: ', err);
+                alert('❌ Не удалось скопировать. Попробуй вручную.');
+            });
+        }
+    </script>
+</body>
+
+</html>
