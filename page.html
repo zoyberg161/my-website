@@ -130,7 +130,7 @@
             left: 50%;
             bottom: 20px;
             transform: translateX(-50%);
-            background-color: #27372897;
+            background-color: #374738bd;
             color: white;
             text-align: center;
             padding: 10px 20px;
@@ -146,6 +146,17 @@
         .toast.show {
             visibility: visible;
             opacity: 1;
+        }
+
+        /* Для мобильных устройств: поднимаем toast выше (на высоту toast + половина toast ≈ +60px) */
+        @media (max-width: 768px) {
+            .toast {
+                bottom: 70px;
+                /* Было 20px → стало 70px (подняли на 50px вверх) */
+                font-size: 0.9em;
+                /* Можно немного уменьшить шрифт на мобильных */
+                padding: 8px 16px;
+            }
         }
 
         @media (min-width: 1200px) {
