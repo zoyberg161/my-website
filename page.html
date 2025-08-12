@@ -251,6 +251,41 @@
         <h1>📚 Termux: Полная шпаргалка</h1>
         <!-- Управление пакетами -->
         <div class="section">
+            <div class="section-title">📦-1 Нужные директории</div>
+            <div class="command-title">Перейти в Download</div>
+            <div class="command-container" onclick="copyToClipboard('pkg update &amp;&amp; pkg upgrade')">
+                <div class="command">pkg update &amp;&amp; pkg upgrade</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('pkg update &amp;&amp; pkg upgrade')">★</button>
+            </div>
+            <div class="description">Обновить список пакетов и установить обновления</div>
+            <div class="example">Пример: После установки Termux — всегда запускай эту команду.</div>
+            <div class="command-title">Команда: Установка пакета</div>
+            <div class="command-container" onclick="copyToClipboard('pkg install nano')">
+                <div class="command">pkg install nano</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('pkg install nano')">★</button>
+            </div>
+            <div class="description">Установить пакет (например, редактор nano)</div>
+            <div class="example">Пример: <code>pkg install python git curl</code></div>
+            <div class="command-title">Команда: Удаление пакета</div>
+            <div class="command-container" onclick="copyToClipboard('pkg uninstall nano')">
+                <div class="command">pkg uninstall nano</div>
+                <button class="copy-btn"
+                    onclick="event.stopPropagation(); copyToClipboard('pkg uninstall nano')">★</button>
+            </div>
+            <div class="description">Удалить пакет</div>
+            <div class="example">Пример: <code>pkg uninstall python</code></div>
+            <div class="command-title">Команда: Список всех пакетов</div>
+            <div class="command-container" onclick="copyToClipboard('pkg list-all')">
+                <div class="command">pkg list-all</div>
+                <button class="copy-btn" onclick="event.stopPropagation(); copyToClipboard('pkg list-all')">★</button>
+            </div>
+            <div class="description">Показать все доступные пакеты</div>
+            <div class="example">Пример: <code>pkg list-all | grep python</code> — найти Python-пакеты</div>
+        </div>
+        <!-- Управление пакетами -->
+        <div class="section">
             <div class="section-title">📦 Управление пакетами</div>
             <div class="command-title">Команда: Обновление пакетов</div>
             <div class="command-container" onclick="copyToClipboard('pkg update &amp;&amp; pkg upgrade')">
