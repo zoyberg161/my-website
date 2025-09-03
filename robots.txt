@@ -8,6 +8,5 @@ Disallow: /dist/
 Disallow: /page.html
 Disallow: /page/kontakty
 Disallow: /collection/frontpage
-Disallow: /product/zamena-dvernyh-dovodchikov
 
 Sitemap: https://uslugi161.ru/sitemap.xml
