@@ -13,7 +13,5 @@ Disallow: /product/remont-i-ustanovka-vytyazhek
 Disallow: /product/ustanovka-televizora-na-stenu
 Disallow: /product/remont-i-ustanovka-antenn
 Disallow: /product/remont-pilesosov
-Disallow: /product/ustanovka-i-remont-sputnikovih-antenn
-Disallow: /product/ustanovka-dvernyh-dovodchikov
 
 Sitemap: https://uslugi161.ru/sitemap.xml
