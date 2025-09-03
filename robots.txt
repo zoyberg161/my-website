@@ -10,6 +10,5 @@ Disallow: /page/kontakty
 Disallow: /collection/frontpage
 Disallow: /product/zamena-dvernyh-dovodchikov
 Disallow: /product/remont-i-ustanovka-vytyazhek
-Disallow: /product/ustanovka-televizora-na-stenu
 
 Sitemap: https://uslugi161.ru/sitemap.xml
