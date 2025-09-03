@@ -18,6 +18,5 @@ Disallow: /product/ustanovka-dvernyh-dovodchikov
 Disallow: /product/zamena-dvernih-zamkov
 Disallow: /product/remont-mikrovolnovok
 Disallow: /product/remont-i-to-sektsionnyh-vorot
-Disallow: /product/montazh-kornizov-dlya-shtor
 
 Sitemap: https://uslugi161.ru/sitemap.xml
