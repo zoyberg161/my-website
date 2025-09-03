@@ -15,7 +15,5 @@ Disallow: /product/remont-i-ustanovka-antenn
 Disallow: /product/remont-pilesosov
 Disallow: /product/ustanovka-i-remont-sputnikovih-antenn
 Disallow: /product/ustanovka-dvernyh-dovodchikov
-Disallow: /product/zamena-dvernih-zamkov
-Disallow: /product/remont-mikrovolnovok
 
 Sitemap: https://uslugi161.ru/sitemap.xml
