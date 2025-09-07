@@ -12,6 +12,14 @@
             box-sizing: border-box;
         }
 
+        hr {
+            border: 0;
+            height: 2px;
+            background-color: #52d752;
+            margin: 12px 0;
+            opacity: 0.6;
+        }
+
         body {
             background-color: #f4f4f8;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -260,6 +268,7 @@
             </div>
             <div class="description">Обновить список пакетов и установить обновления</div>
             <div class="example">Пример: После установки Termux — всегда запускай эту команду.</div>
+            <hr>
             <div class="command-title">Команда: Установка пакета</div>
             <div class="command-container" onclick="copyToClipboard('pkg install nano')">
                 <div class="command">pkg install nano</div>
@@ -268,6 +277,7 @@
             </div>
             <div class="description">Установить пакет (например, редактор nano)</div>
             <div class="example">Пример: <code>pkg install python git curl</code></div>
+            <hr>
             <div class="command-title">Команда: Удаление пакета</div>
             <div class="command-container" onclick="copyToClipboard('pkg uninstall nano')">
                 <div class="command">pkg uninstall nano</div>
@@ -276,6 +286,7 @@
             </div>
             <div class="description">Удалить пакет</div>
             <div class="example">Пример: <code>pkg uninstall python</code></div>
+            <hr>
             <div class="command-title">Команда: Список всех пакетов</div>
             <div class="command-container" onclick="copyToClipboard('pkg list-all')">
                 <div class="command">pkg list-all</div>
@@ -283,6 +294,7 @@
             </div>
             <div class="description">Показать все доступные пакеты</div>
             <div class="example">Пример: <code>pkg list-all | grep python</code> — найти Python-пакеты</div>
+            <hr>
         </div>
         <!-- Управление пакетами -->
         <div class="section">
@@ -295,6 +307,7 @@
             </div>
             <div class="description">Обновить список пакетов и установить обновления</div>
             <div class="example">Пример: После установки Termux — всегда запускай эту команду.</div>
+            <hr>
             <div class="command-title">Команда: Установка пакета</div>
             <div class="command-container" onclick="copyToClipboard('pkg install nano')">
                 <div class="command">pkg install nano</div>
@@ -303,6 +316,7 @@
             </div>
             <div class="description">Установить пакет (например, редактор nano)</div>
             <div class="example">Пример: <code>pkg install python git curl</code></div>
+            <hr>
             <div class="command-title">Команда: Удаление пакета</div>
             <div class="command-container" onclick="copyToClipboard('pkg uninstall nano')">
                 <div class="command">pkg uninstall nano</div>
@@ -311,6 +325,7 @@
             </div>
             <div class="description">Удалить пакет</div>
             <div class="example">Пример: <code>pkg uninstall python</code></div>
+            <hr>
             <div class="command-title">Команда: Список всех пакетов</div>
             <div class="command-container" onclick="copyToClipboard('pkg list-all')">
                 <div class="command">pkg list-all</div>
@@ -318,6 +333,7 @@
             </div>
             <div class="description">Показать все доступные пакеты</div>
             <div class="example">Пример: <code>pkg list-all | grep python</code> — найти Python-пакеты</div>
+            <hr>
         </div>
         <!-- Навигация по файлам -->
         <div class="section">
@@ -329,6 +345,7 @@
             </div>
             <div class="description">Показать содержимое текущей папки</div>
             <div class="example">Пример: <code>ls -la</code> — с скрытыми файлами и деталями</div>
+            <hr>
             <div class="command-title">Команда: Переход в папку</div>
             <div class="command-container" onclick="copyToClipboard('cd ~/storage/shared/Download')">
                 <div class="command">cd ~/storage/shared/Download</div>
@@ -337,6 +354,7 @@
             </div>
             <div class="description">Перейти в папку (например, Загрузки)</div>
             <div class="example">Пример: <code>cd ~</code> — в домашнюю папку</div>
+            <hr>
             <div class="command-title">Команда: Возврат на уровень выше</div>
             <div class="command-container" onclick="copyToClipboard('cd ..')">
                 <div class="command">cd ..</div>
@@ -344,6 +362,7 @@
             </div>
             <div class="description">Вернуться на уровень выше</div>
             <div class="example">Пример: Из папки `Scripts` → в `home`</div>
+            <hr>
             <div class="command-title">Команда: Показать текущий путь</div>
             <div class="command-container" onclick="copyToClipboard('pwd')">
                 <div class="command">pwd</div>
@@ -351,6 +370,7 @@
             </div>
             <div class="description">Показать текущий путь</div>
             <div class="example">Пример: <code>/data/data/com.termux/files/home</code></div>
+            <hr>
         </div>
         <!-- Работа с файлами -->
         <div class="section">
@@ -363,6 +383,7 @@
             </div>
             <div class="description">Скопировать файл</div>
             <div class="example">Пример: <code>cp ~/qwen.sh ~/scripts/</code></div>
+            <hr>
             <div class="command-title">Команда: Перемещение/переименование файла</div>
             <div class="command-container" onclick="copyToClipboard('mv old.sh new.sh')">
                 <div class="command">mv old.sh new.sh</div>
@@ -371,6 +392,7 @@
             </div>
             <div class="description">Переименовать или переместить файл</div>
             <div class="example">Пример: <code>mv ~/Download/app.py ~</code></div>
+            <hr>
             <div class="command-title">Команда: Удаление файла</div>
             <div class="command-container" onclick="copyToClipboard('rm file.txt')">
                 <div class="command">rm file.txt</div>
@@ -378,6 +400,7 @@
             </div>
             <div class="description">Удалить файл</div>
             <div class="example">Пример: <code>rm ~/temp.log</code></div>
+            <hr>
             <div class="command-title">Команда: Создание папки</div>
             <div class="command-container" onclick="copyToClipboard('mkdir scripts')">
                 <div class="command">mkdir scripts</div>
@@ -385,6 +408,7 @@
             </div>
             <div class="description">Создать папку</div>
             <div class="example">Пример: <code>mkdir ~/projects ~/backups</code></div>
+            <hr>
         </div>
         <!-- Работа с текстом -->
         <div class="section">
@@ -396,6 +420,7 @@
             </div>
             <div class="description">Открыть файл в редакторе</div>
             <div class="example">Пример: <code>nano ~/.bashrc</code> — настройка Termux</div>
+            <hr>
             <div class="command-title">Команда: Просмотр содержимого файла</div>
             <div class="command-container" onclick="copyToClipboard('cat file.txt')">
                 <div class="command">cat file.txt</div>
@@ -403,6 +428,7 @@
             </div>
             <div class="description">Показать содержимое файла</div>
             <div class="example">Пример: <code>cat ~/qwen.sh</code></div>
+            <hr>
             <div class="command-title">Команда: Запись текста в файл</div>
             <div class="command-container" onclick="copyToClipboard('echo &quot;Hello&quot; > hello.txt')">
                 <div class="command">echo "Hello" > hello.txt</div>
@@ -411,6 +437,7 @@
             </div>
             <div class="description">Записать текст в файл (перезапись)</div>
             <div class="example">Пример: <code>echo &quot;PATH=...&quot; >> ~/.bashrc</code></div>
+            <hr>
             <div class="command-title">Команда: Поиск по тексту в файле</div>
             <div class="command-container" onclick="copyToClipboard('grep &quot;error&quot; log.txt')">
                 <div class="command">grep "error" log.txt</div>
@@ -419,6 +446,7 @@
             </div>
             <div class="description">Найти строку в файле</div>
             <div class="example">Пример: <code>grep -i &quot;fail&quot; *.log</code> — без учёта регистра</div>
+            <hr>
             <div class="command-title">Команда: Просмотр первых строк файла</div>
             <div class="command-container" onclick="copyToClipboard('head -n 10 file.txt')">
                 <div class="command">head -n 10 file.txt</div>
@@ -427,6 +455,7 @@
             </div>
             <div class="description">Показать первые 10 строк файла</div>
             <div class="example">Пример: <code>head -20 ~/access.log</code></div>
+            <hr>
             <div class="command-title">Команда: Мониторинг файла в реальном времени</div>
             <div class="command-container" onclick="copyToClipboard('tail -f log.txt')">
                 <div class="command">tail -f log.txt</div>
@@ -435,6 +464,7 @@
             </div>
             <div class="description">Следить за изменениями в файле в реальном времени</div>
             <div class="example">Пример: <code>tail -f /var/log/system.log</code></div>
+            <hr>
         </div>
         <!-- Сеть и Git -->
         <div class="section">
@@ -447,6 +477,7 @@
             </div>
             <div class="description">Разрешить доступ к памяти телефона</div>
             <div class="example">Пример: Выполни один раз после установки Termux</div>
+            <hr>
             <div class="command-title">Команда: Клонирование репозитория</div>
             <div class="command-container" onclick="copyToClipboard('git clone https://github.com/user/repo.git')">
                 <div class="command">git clone https://github.com/user/repo.git</div>
@@ -455,6 +486,7 @@
             </div>
             <div class="description">Скачать репозиторий с GitHub</div>
             <div class="example">Пример: <code>git clone https://github.com/datawhalechina/leeml-notebook.git</code>
+                <hr>
             </div>
             <div class="command-title">Команда: Запуск локального сервера (Termux)</div>
             <div class="command-container" onclick="copyToClipboard('python -m http.server 8080')">
@@ -464,6 +496,7 @@
             </div>
             <div class="description">Запустить локальный веб-сервер</div>
             <div class="example">Пример: Открой в браузере: <code>http://localhost:8080</code></div>
+            <hr>
 
             <!-- НОВАЯ ПОДСЕКЦИЯ: Локальный сервер Python -->
             <div class="command-title">Команда: Запуск локального сервера (Python)</div>
@@ -474,6 +507,7 @@
             </div>
             <div class="description">Запустить локальный веб-сервер с помощью Python</div>
             <div class="example">Пример: Открой в браузере: <code>http://localhost:8000/page.html</code></div>
+            <hr>
             <!-- КОНЕЦ НОВОЙ ПОДСЕКЦИИ -->
 
             <div class="command-title">Команда: Показать внешний IP</div>
@@ -484,6 +518,7 @@
             </div>
             <div class="description">Показать внешний IP-адрес</div>
             <div class="example">Пример: <code>curl ipinfo.io</code> — подробная информация</div>
+            <hr>
             <div class="command-title">Команда: Проверка подключения</div>
             <div class="command-container" onclick="copyToClipboard('ping google.com')">
                 <div class="command">ping google.com</div>
@@ -492,6 +527,7 @@
             </div>
             <div class="description">Проверить подключение к сайту</div>
             <div class="example">Пример: <code>ping -c 4 ya.ru</code> — 4 пакета</div>
+            <hr>
             <div class="command-title">Команда: Подключение по SSH</div>
             <div class="command-container" onclick="copyToClipboard('ssh user@host -p 22')">
                 <div class="command">ssh user@host -p 22</div>
@@ -500,6 +536,7 @@
             </div>
             <div class="description">Подключиться по SSH</div>
             <div class="example">Пример: <code>ssh root@192.168.1.100</code></div>
+            <hr>
         </div>
         <!-- Системные команды -->
         <div class="section">
@@ -511,6 +548,7 @@
             </div>
             <div class="description">Очистить экран терминала</div>
             <div class="example">Пример: После долгой работы — чистим экран</div>
+            <hr>
             <div class="command-title">Команда: Выход из Termux</div>
             <div class="command-container" onclick="copyToClipboard('exit')">
                 <div class="command">exit</div>
@@ -518,6 +556,7 @@
             </div>
             <div class="description">Выйти из Termux</div>
             <div class="example">Пример: Закрыть сессию</div>
+            <hr>
             <div class="command-title">Команда: Поиск файлов</div>
             <div class="command-container" onclick="copyToClipboard('find ~/storage/shared -name &quot;*.sh&quot;')">
                 <div class="command">find ~/storage/shared -name "*.sh"</div>
@@ -526,6 +565,7 @@
             </div>
             <div class="description">Найти файлы по имени или расширению</div>
             <div class="example">Пример: <code>find ~ -type f -name "config*"</code></div>
+            <hr>
             <div class="command-title">Команда: Размер файлов и папок</div>
             <div class="command-container" onclick="copyToClipboard('du -sh *')">
                 <div class="command">du -sh *</div>
@@ -533,6 +573,7 @@
             </div>
             <div class="description">Показать размер файлов и папок</div>
             <div class="example">Пример: <code>du -h ~/downloads/</code></div>
+            <hr>
             <div class="command-title">Команда: Использование диска</div>
             <div class="command-container" onclick="copyToClipboard('df -h')">
                 <div class="command">df -h</div>
@@ -540,6 +581,7 @@
             </div>
             <div class="description">Показать использование диска</div>
             <div class="example">Пример: Свободное место на устройстве</div>
+            <hr>
             <div class="command-title">Команда: Просмотр процессов</div>
             <div class="command-container" onclick="copyToClipboard('ps aux')">
                 <div class="command">ps aux</div>
@@ -547,6 +589,7 @@
             </div>
             <div class="description">Показать запущенные процессы</div>
             <div class="example">Пример: <code>ps | grep python</code> — найти Python-процессы</div>
+            <hr>
             <div class="command-title">Команда: Сделать файл исполняемым</div>
             <div class="command-container" onclick="copyToClipboard('chmod +x script.sh')">
                 <div class="command">chmod +x script.sh</div>
@@ -555,6 +598,7 @@
             </div>
             <div class="description">Сделать файл исполняемым</div>
             <div class="example">Пример: Перед запуском <code>./script.sh</code></div>
+            <hr>
         </div>
         <!-- Дополнительные инструменты -->
         <div class="section">
@@ -567,6 +611,7 @@
             </div>
             <div class="description">Установить PRoot — запуск Linux-дистрибутивов</div>
             <div class="example">Пример: <code>proot-distro install ubuntu</code></div>
+            <hr>
             <div class="command-title">Команда: Информация о Termux</div>
             <div class="command-container" onclick="copyToClipboard('termux-info')">
                 <div class="command">termux-info</div>
@@ -574,6 +619,7 @@
             </div>
             <div class="description">Показать информацию о Termux и системе</div>
             <div class="example">Пример: Версия, путь, среда</div>
+            <hr>
             <div class="command-title">Команда: Поиск исполняемого файла</div>
             <div class="command-container" onclick="copyToClipboard('which python')">
                 <div class="command">which python</div>
@@ -581,6 +627,7 @@
             </div>
             <div class="description">Найти путь к исполняемому файлу</div>
             <div class="example">Пример: <code>which git</code></div>
+            <hr>
             <div class="command-title">Команда: История команд</div>
             <div class="command-container" onclick="copyToClipboard('history')">
                 <div class="command">history</div>
@@ -588,6 +635,7 @@
             </div>
             <div class="description">Показать историю введённых команд</div>
             <div class="example">Пример: Поиск ранее введённой команды</div>
+            <hr>
             <div class="command-title">Команда: Справка по команде</div>
             <div class="command-container" onclick="copyToClipboard('man ls')">
                 <div class="command">man ls</div>
@@ -595,6 +643,7 @@
             </div>
             <div class="description">Показать руководство по команде</div>
             <div class="example">Пример: <code>man grep</code> — подробная справка</div>
+            <hr>
         </div>
         <!-- Распространенные ошибки -->
         <div class="section error-section">
